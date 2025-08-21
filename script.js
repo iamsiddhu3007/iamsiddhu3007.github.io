@@ -16,7 +16,7 @@ const profile = {
   roles: ["Software Developer Intern @ Superstars", "BTS Data Engineering Intern @ ZS (2024)", "SCAI Grader @ ASU"],
   links: {
     github: "https://github.com/iamsiddhu3007",
-    linkedin: "https://www.linkedin.com/in/REPLACE_ME",
+    linkedin: "https://www.linkedin.com/in/siddharthachivukula/",
     resume: "./resume.pdf"
   },
   skills: [
@@ -38,7 +38,7 @@ const profile = {
     {
       role: "Software Developer Intern",
       org: "Superstars",
-      time: "May 2025 – Present · Remote",
+      time: "May 2025 – Aug 2025 · Remote",
       bullets: [
         "Shipped Stories & Action Feed modules in Flutter/Dart with REST integrations.",
         "Profiled UI and optimized caching; strengthened CI via GitHub Actions + Postman tests."
