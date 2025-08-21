@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mohana Siddhartha Chivukula · Terminal Portfolio</title>
+  <meta name="description" content="Terminal-style portfolio of Mohana Siddhartha Chivukula (Siddhartha) — Software Developer & Data/ETL Engineer" />
+  <meta property="og:title" content="Siddhartha · Terminal Portfolio" />
+  <meta property="og:description" content="Software Developer · Data/ETL Engineer · Security/Forensics Grader" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="terminal" role="region" aria-label="Terminal portfolio">
+      <header class="terminal__bar" role="banner">
+        <div class="traffic">
+          <span class="dot dot--red" aria-hidden="true"></span>
+          <span class="dot dot--yellow" aria-hidden="true"></span>
+          <span class="dot dot--green" aria-hidden="true"></span>
+        </div>
+        <div class="title" aria-hidden="true">sid@portfolio: ~</div>
+        <button id="themeToggle" class="btn" aria-label="Toggle theme">theme</button>
+      </header>
+
+      <div id="output" class="terminal__output" aria-live="polite"></div>
+
+      <form id="cmdForm" class="terminal__input" autocomplete="off" spellcheck="false">
+        <label class="prompt" for="cmd">$</label>
+        <input id="cmd" name="cmd" type="text" aria-label="Command line" autofocus />
+      </form>
+    </section>
+    <footer class="footer">
+      <span>© <span id="year"></span> Mohana Siddhartha Chivukula</span>
+      <a href="mailto:REPLACE_ME@example.com">email</a>
+      <a href="https://www.linkedin.com/in/REPLACE_ME" rel="noopener">linkedin</a>
+      <a href="https://github.com/iamsiddhu3007" rel="noopener">github</a>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
