@@ -6,19 +6,24 @@
     width: 100%;
     z-index: 1000;
     padding: 1rem 0;
-    background: var(--bg-glass);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid var(--border);
+    background: var(--nav-bg);
+    backdrop-filter: blur(40px) saturate(200%) brightness(1.1);
+    -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(1.1);
+    border-bottom: 1px solid var(--nav-border);
+    box-shadow:
+        0 1px 0 0 var(--nav-highlight) inset,
+        0 8px 32px var(--nav-shadow);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar.scrolled {
     padding: 0.7rem 0;
-    background: rgba(var(--bg-glass-rgb, 255, 255, 255), 0.8);
-    backdrop-filter: blur(30px) saturate(180%);
-    -webkit-backdrop-filter: blur(30px) saturate(180%);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: var(--nav-bg-scrolled);
+    backdrop-filter: blur(60px) saturate(200%) brightness(1.15);
+    -webkit-backdrop-filter: blur(60px) saturate(200%) brightness(1.15);
+    box-shadow:
+        0 1px 0 0 var(--nav-highlight) inset,
+        0 12px 48px var(--nav-shadow-scrolled);
 }
 
 .nav-content {
@@ -61,7 +66,12 @@
 
 .nav-links a:hover {
     color: var(--accent);
-    background: rgba(96, 165, 250, 0.1);
+    background: var(--nav-link-hover);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow:
+        0 1px 0 0 var(--nav-link-highlight) inset,
+        0 4px 12px var(--nav-link-shadow);
 }
 
 .nav-links a.active {
@@ -83,10 +93,10 @@
     width: 44px;
     height: 44px;
     font-size: 1.2rem;
-    border: 1px solid var(--border);
-    background: var(--bg-glass);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--nav-border);
+    background: var(--nav-button-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     color: var(--text-primary);
     border-radius: 12px;
     cursor: pointer;
@@ -94,11 +104,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow:
+        0 1px 0 0 var(--nav-button-highlight) inset,
+        0 4px 12px var(--nav-button-shadow);
 }
 
 .theme-toggle:hover {
-    background: rgba(96, 165, 250, 0.1);
+    background: var(--nav-button-hover);
     border-color: var(--accent);
+    box-shadow:
+        0 1px 0 0 var(--nav-button-highlight) inset,
+        0 6px 20px var(--nav-button-shadow-hover);
+    transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {
