@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import Card from '../components/Card';
+import './Projects.css';
 
 const projects = [
     {
@@ -105,45 +105,69 @@ export default function Projects() {
             style={{ paddingTop: '120px', minHeight: '100vh', paddingBottom: '3rem' }}
         >
             <h1>Projects</h1>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
+            <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '900px' }}>
+                A collection of projects spanning mobile development, machine learning, blockchain, and full-stack applications.
+            </p>
+
+            <div className="timeline-container">
                 {projects.map((proj, idx) => (
-                    <Card key={idx} delay={idx * 0.05} style={{ display: 'flex', flexDirection: 'column' }}>
-                        <h3 style={{ fontSize: '1.4rem', marginBottom: '0.5rem', lineHeight: '1.3' }}>
-                            {proj.name}
-                        </h3>
-                        {proj.university && (
-                            <p style={{ fontSize: '0.9rem', color: 'var(--accent)', marginBottom: '0.3rem', fontStyle: 'italic' }}>
-                                {proj.university}
-                            </p>
-                        )}
-                        <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '1rem' }}>
-                            {proj.period}
-                        </p>
-                        <p style={{ marginBottom: '1.2rem', lineHeight: '1.7', flex: 1, color: 'var(--text-secondary)' }}>
-                            {proj.desc}
-                        </p>
-                        <p style={{ color: 'var(--accent)', fontSize: '0.9rem', marginBottom: '1.2rem', fontWeight: 500 }}>
-                            {proj.tech}
-                        </p>
-                        {proj.link && (
-                            <motion.a
-                                href={proj.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{
-                                    fontSize: '1rem',
-                                    marginTop: 'auto',
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    gap: '0.5rem',
-                                    fontWeight: 600
-                                }}
-                                whileHover={{ gap: '0.8rem' }}
-                            >
-                                View on GitHub →
-                            </motion.a>
-                        )}
-                    </Card>
+                    <motion.div
+                        key={idx}
+                        className="timeline-item"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.05 }}
+                    >
+                        <div className="timeline-marker">
+                            <div className="timeline-dot"></div>
+                            <div className="timeline-line"></div>
+                        </div>
+
+                        <div className="project-card">
+                            <div className="project-header">
+                                <div className="project-title-group">
+                                    <h3>{proj.name}</h3>
+                                    {proj.university && (
+                                        <p className="project-university">{proj.university}</p>
+                                    )}
+                                </div>
+                                <div className="project-badges">
+                                    <span className="project-badge">📅 {proj.period}</span>
+                                </div>
+                            </div>
+
+                            <div className="project-meta">
+                                <span>🛠️ {proj.tech}</span>
+                            </div>
+
+                            <p className="project-description">{proj.desc}</p>
+
+                            <div className="project-skills">
+                                {proj.skills.map((skill, i) => (
+                                    <span key={i} className="skill-tag">{skill}</span>
+                                ))}
+                            </div>
+
+                            {proj.link && (
+                                <motion.a
+                                    href={proj.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="project-link"
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                >
+                                    View on GitHub
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                        <polyline points="15 3 21 3 21 9" />
+                                        <line x1="10" y1="14" x2="21" y2="3" />
+                                    </svg>
+                                </motion.a>
+                            )}
+                        </div>
+                    </motion.div>
                 ))}
             </div>
         </motion.div>

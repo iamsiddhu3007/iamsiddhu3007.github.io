@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import Card from '../components/Card';
+import './Education.css';
 
 const asuCourses = {
     "Fall 2024": [
@@ -27,15 +27,18 @@ const snuCourses = {
         "Introduction to Computing and Programming",
         "Object Oriented Programming",
         "Discrete Mathematics",
+        "Data Structures",
         "Computer Organization and Architecture",
         "Introduction to Database Systems",
         "Design and Analysis of Algorithms",
         "Software Design Lab",
         "Applied Cryptography",
         "Introduction To Cyber Security Tools & Cyber Attacks",
+        "Ethical Hacking",
         "Introduction to Artificial Intelligence",
         "Computer Networks",
         "Software Engineering",
+        "Software Project Management - Planning, Execution, Evaluation And Control",
         "Theory of Computation",
         "Compiler",
         "Information Retrieval",
@@ -59,25 +62,43 @@ const snuCourses = {
         "Introduction to Electrical Engineering",
         "Intro Dynamics for Teams",
         "Mathematical Methods I & II",
-        "Engineering Science & Design"
+        "Engineering Science & Design",
+        "Introduction to Robotics"
     ],
     "General Education": [
         "Introduction to Psychology",
         "Public Speaking and Persuasion",
         "Evolution of life",
-        "Introduction to Robotics",
         "The Brain",
         "The modern world--Global history since 1760",
         "Environmental Studies",
-        "Data Structures",
         "Cancer, a Deadly Disease: Myths and facts",
-        "Software Project Management - Planning, Execution, Evaluation And Control",
-        "Ethical Hacking",
         "Principles of Management"
     ]
 };
 
 export default function Education() {
+    const educationData = [
+        {
+            school: "Arizona State University",
+            degree: "Master of Science - Computer Science",
+            period: "Aug 2024 – May 2026",
+            location: "Tempe, Arizona, United States",
+            gpa: "4.0/4.0",
+            type: "semester",
+            courses: asuCourses
+        },
+        {
+            school: "Shiv Nadar University",
+            degree: "B.Tech - Computer Science & Engineering",
+            period: "Aug 2020 – May 2024",
+            location: "Greater Noida, Uttar Pradesh, India",
+            gpa: "7.61/10",
+            type: "category",
+            courses: snuCourses
+        }
+    ];
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -86,114 +107,78 @@ export default function Education() {
             style={{ paddingTop: '120px', minHeight: '100vh', paddingBottom: '3rem' }}
         >
             <h1>Education</h1>
+            <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '900px' }}>
+                My academic journey through graduate and undergraduate studies in Computer Science.
+            </p>
 
-            {/* Arizona State University */}
-            <Card delay={0.1} hover={false} style={{ marginBottom: '3rem' }}>
-                <h2 style={{ fontSize: '2rem', marginTop: 0, marginBottom: '0.5rem' }}>
-                    Arizona State University
-                </h2>
-                <p style={{ color: 'var(--accent)', fontSize: '1.3rem', marginBottom: '0.3rem' }}>
-                    Master of Science - Computer Science
-                </p>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
-                    Aug 2024 – May 2026 | GPA: 4.0/4.0
-                </p>
+            <div className="education-timeline">
+                {educationData.map((edu, idx) => (
+                    <motion.div
+                        key={idx}
+                        className="education-item"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.1 }}
+                    >
+                        <div className="timeline-marker">
+                            <div className="timeline-dot"></div>
+                            <div className="timeline-line"></div>
+                        </div>
 
-                {Object.entries(asuCourses).map(([semester, courses], idx) => (
-                    <div key={semester} style={{ marginBottom: '2rem' }}>
-                        <h3 style={{
-                            fontSize: '1.2rem',
-                            marginBottom: '1rem',
-                            color: 'var(--accent)',
-                            borderBottom: '2px solid var(--border)',
-                            paddingBottom: '0.5rem'
-                        }}>
-                            {semester}
-                        </h3>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '0.8rem' }}>
-                            {courses.map((course, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, x: -10 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.05 }}
-                                    style={{
-                                        padding: '0.8rem',
-                                        background: 'rgba(96, 165, 250, 0.05)',
-                                        borderRadius: '12px',
-                                        border: '1px solid var(--border)',
-                                        transition: 'all 0.3s ease'
-                                    }}
-                                    whileHover={{
-                                        background: 'rgba(96, 165, 250, 0.1)',
-                                        borderColor: 'var(--accent)'
-                                    }}
-                                >
-                                    <span style={{
-                                        color: 'var(--accent)',
-                                        fontWeight: 600,
-                                        fontSize: '0.9rem',
-                                        display: 'block'
-                                    }}>
-                                        {course.code}
-                                    </span>
-                                    <p style={{ margin: '0.3rem 0 0 0', fontSize: '0.95rem' }}>
-                                        {course.name}
-                                    </p>
-                                </motion.div>
+                        <div className="education-card">
+                            <div className="edu-header">
+                                <h2>{edu.school}</h2>
+                                <p className="edu-degree">{edu.degree}</p>
+                            </div>
+
+                            <div className="edu-meta">
+                                <span>📅 {edu.period}</span>
+                                <span>📍 {edu.location}</span>
+                                <span className="gpa-badge">⭐ GPA: {edu.gpa}</span>
+                            </div>
+
+                            {Object.entries(edu.courses).map(([key, items], catIdx) => (
+                                <div key={key} className="courses-section">
+                                    <h3 className="course-category-title">{key}</h3>
+                                    {edu.type === 'semester' ? (
+                                        <div className="courses-grid">
+                                            {items.map((course, i) => (
+                                                <motion.div
+                                                    key={i}
+                                                    className="course-card"
+                                                    initial={{ opacity: 0, y: 10 }}
+                                                    whileInView={{ opacity: 1, y: 0 }}
+                                                    viewport={{ once: true }}
+                                                    transition={{ delay: i * 0.03 }}
+                                                >
+                                                    <span className="course-code">{course.code}</span>
+                                                    <p className="course-name">{course.name}</p>
+                                                </motion.div>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <div>
+                                            {items.map((course, i) => (
+                                                <motion.div
+                                                    key={i}
+                                                    className="course-item"
+                                                    initial={{ opacity: 0 }}
+                                                    whileInView={{ opacity: 1 }}
+                                                    viewport={{ once: true }}
+                                                    transition={{ delay: i * 0.02 }}
+                                                >
+                                                    {course}
+                                                </motion.div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
-            </Card>
-
-            {/* Shiv Nadar University */}
-            <Card delay={0.2} hover={false}>
-                <h2 style={{ fontSize: '2rem', marginTop: 0, marginBottom: '0.5rem' }}>
-                    Shiv Nadar University
-                </h2>
-                <p style={{ color: 'var(--accent)', fontSize: '1.3rem', marginBottom: '0.3rem' }}>
-                    B.Tech - Computer Science & Engineering
-                </p>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '2.5rem' }}>
-                    Aug 2020 – May 2024 | GPA: 7.61/10
-                </p>
-
-                {Object.entries(snuCourses).map(([category, courses], idx) => (
-                    <div key={category} style={{ marginBottom: '2rem' }}>
-                        <h3 style={{
-                            fontSize: '1.15rem',
-                            marginBottom: '1rem',
-                            color: 'var(--accent)',
-                            borderBottom: '2px solid var(--border)',
-                            paddingBottom: '0.5rem'
-                        }}>
-                            {category}
-                        </h3>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '0.6rem' }}>
-                            {courses.map((course, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.02 }}
-                                    style={{
-                                        padding: '0.6rem 0.8rem',
-                                        fontSize: '0.92rem',
-                                        display: 'flex',
-                                        alignItems: 'center'
-                                    }}
-                                >
-                                    <span style={{ color: 'var(--accent)', marginRight: '0.5rem' }}>▹</span>
-                                    {course}
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                ))}
-            </Card>
+            </div>
         </motion.div>
     );
 }
