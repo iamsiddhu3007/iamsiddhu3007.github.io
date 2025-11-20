@@ -1,23 +1,24 @@
 import { motion } from 'framer-motion';
+import Card from '../components/Card';
 
 const asuCourses = {
     "Fall 2024": [
-        { code: "CSE 535", name: "Mobile Computing", grade: "A+" },
-        { code: "CSE 543", name: "Info Assurance & Security", grade: "A" },
-        { code: "CSE 572", name: "Data Mining", grade: "A+" }
+        { code: "CSE 535", name: "Mobile Computing" },
+        { code: "CSE 543", name: "Info Assurance & Security" },
+        { code: "CSE 572", name: "Data Mining" }
     ],
     "Spring 2025": [
-        { code: "CSE 565", name: "Software Verif/Validation/Test", grade: "A" },
-        { code: "CSE 578", name: "Data Visualization", grade: "A+" },
-        { code: "CSE 579", name: "Knowledge Representation", grade: "A+" }
+        { code: "CSE 565", name: "Software Verif/Validation/Test" },
+        { code: "CSE 578", name: "Data Visualization" },
+        { code: "CSE 579", name: "Knowledge Representation" }
     ],
     "Summer 2025": [
-        { code: "CSE 584", name: "Internship - Curricular Practical Training", grade: "Y" }
+        { code: "CSE 584", name: "Internship - Curricular Practical Training" }
     ],
     "Fall 2025": [
-        { code: "CSE 511", name: "Data Processing at Scale", grade: "In Progress" },
-        { code: "CSE 539", name: "Applied Cryptography", grade: "In Progress" },
-        { code: "CSE 548", name: "Engr Blockchain Applications", grade: "In Progress" }
+        { code: "CSE 511", name: "Data Processing at Scale" },
+        { code: "CSE 539", name: "Applied Cryptography" },
+        { code: "CSE 548", name: "Engr Blockchain Applications" }
     ]
 };
 
@@ -87,12 +88,7 @@ export default function Education() {
             <h1>Education</h1>
 
             {/* Arizona State University */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="glass"
-                style={{ padding: '2.5rem', marginBottom: '3rem' }}
-            >
+            <Card delay={0.1} hover={false} style={{ marginBottom: '3rem' }}>
                 <h2 style={{ fontSize: '2rem', marginTop: 0, marginBottom: '0.5rem' }}>
                     Arizona State University
                 </h2>
@@ -119,52 +115,41 @@ export default function Education() {
                                 <motion.div
                                     key={i}
                                     initial={{ opacity: 0, x: -10 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: idx * 0.1 + i * 0.05 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.05 }}
                                     style={{
                                         padding: '0.8rem',
-                                        background: 'var(--bg-glass)',
-                                        borderRadius: '8px',
-                                        border: '1px solid var(--border)'
+                                        background: 'rgba(96, 165, 250, 0.05)',
+                                        borderRadius: '12px',
+                                        border: '1px solid var(--border)',
+                                        transition: 'all 0.3s ease'
+                                    }}
+                                    whileHover={{
+                                        background: 'rgba(96, 165, 250, 0.1)',
+                                        borderColor: 'var(--accent)'
                                     }}
                                 >
-                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
-                                        <div>
-                                            <span style={{
-                                                color: 'var(--accent)',
-                                                fontWeight: 600,
-                                                fontSize: '0.9rem'
-                                            }}>
-                                                {course.code}
-                                            </span>
-                                            <p style={{ margin: '0.3rem 0 0 0', fontSize: '0.95rem' }}>
-                                                {course.name}
-                                            </p>
-                                        </div>
-                                        <span style={{
-                                            color: 'var(--accent)',
-                                            fontWeight: 700,
-                                            fontSize: '0.9rem',
-                                            marginLeft: '0.5rem'
-                                        }}>
-                                            {course.grade}
-                                        </span>
-                                    </div>
+                                    <span style={{
+                                        color: 'var(--accent)',
+                                        fontWeight: 600,
+                                        fontSize: '0.9rem',
+                                        display: 'block'
+                                    }}>
+                                        {course.code}
+                                    </span>
+                                    <p style={{ margin: '0.3rem 0 0 0', fontSize: '0.95rem' }}>
+                                        {course.name}
+                                    </p>
                                 </motion.div>
                             ))}
                         </div>
                     </div>
                 ))}
-            </motion.div>
+            </Card>
 
             {/* Shiv Nadar University */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="glass"
-                style={{ padding: '2.5rem' }}
-            >
+            <Card delay={0.2} hover={false}>
                 <h2 style={{ fontSize: '2rem', marginTop: 0, marginBottom: '0.5rem' }}>
                     Shiv Nadar University
                 </h2>
@@ -191,8 +176,9 @@ export default function Education() {
                                 <motion.div
                                     key={i}
                                     initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ delay: idx * 0.1 + i * 0.03 }}
+                                    whileInView={{ opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.02 }}
                                     style={{
                                         padding: '0.6rem 0.8rem',
                                         fontSize: '0.92rem',
@@ -207,7 +193,7 @@ export default function Education() {
                         </div>
                     </div>
                 ))}
-            </motion.div>
+            </Card>
         </motion.div>
     );
 }

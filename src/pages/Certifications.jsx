@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Card from '../components/Card';
 
 const certifications = [
     {
@@ -67,18 +68,19 @@ export default function Certifications() {
         >
             <h1>Certifications</h1>
             <p style={{
-                fontSize: '1.1rem',
+                fontSize: '1.2rem',
                 color: 'var(--text-secondary)',
-                marginBottom: '2.5rem',
-                maxWidth: '700px'
+                marginBottom: '3rem',
+                maxWidth: '800px',
+                lineHeight: '1.7'
             }}>
                 Professional certifications and courses completed to enhance technical skills and stay current with industry trends.
             </p>
 
             <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-                gap: '1.8rem'
+                gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+                gap: '2rem'
             }}>
                 {certifications.map((cert, idx) => (
                     <motion.a
@@ -86,61 +88,41 @@ export default function Certifications() {
                         href={cert.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: idx * 0.08 }}
-                        whileHover={{ scale: 1.05, translateY: -5 }}
-                        className="glass"
-                        style={{
-                            padding: '1.8rem',
-                            textDecoration: 'none',
-                            display: 'block',
-                            cursor: 'pointer'
-                        }}
+                        style={{ textDecoration: 'none', display: 'block' }}
                     >
-                        <h3 style={{
-                            fontSize: '1.15rem',
-                            marginBottom: '0.8rem',
-                            color: 'var(--text-primary)',
-                            lineHeight: '1.4'
-                        }}>
-                            {cert.name}
-                        </h3>
-                        <p style={{
-                            color: 'var(--accent)',
-                            marginBottom: '0.5rem',
-                            fontWeight: 600,
-                            fontSize: '1rem'
-                        }}>
-                            {cert.issuer}
-                        </p>
-                        <p style={{
-                            color: 'var(--text-secondary)',
-                            fontSize: '0.9rem'
-                        }}>
-                            {cert.date}
-                        </p>
+                        <Card delay={idx * 0.06}>
+                            <h3 style={{
+                                fontSize: '1.2rem',
+                                marginBottom: '0.9rem',
+                                color: 'var(--text-primary)',
+                                lineHeight: '1.4'
+                            }}>
+                                {cert.name}
+                            </h3>
+                            <p style={{
+                                color: 'var(--accent)',
+                                marginBottom: '0.6rem',
+                                fontWeight: 600,
+                                fontSize: '1.05rem'
+                            }}>
+                                {cert.issuer}
+                            </p>
+                            <p style={{
+                                color: 'var(--text-secondary)',
+                                fontSize: '0.95rem'
+                            }}>
+                                {cert.date}
+                            </p>
+                        </Card>
                     </motion.a>
                 ))}
             </div>
 
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-                style={{
-                    marginTop: '3rem',
-                    padding: '1.5rem',
-                    background: 'var(--bg-glass)',
-                    borderRadius: '12px',
-                    border: '1px solid var(--border)',
-                    textAlign: 'center'
-                }}
-            >
+            <Card delay={0.5} hover={false} style={{ marginTop: '3rem', textAlign: 'center' }}>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
                     <strong>Note:</strong> Certificate links are placeholders and will be updated with actual credential URLs.
                 </p>
-            </motion.div>
+            </Card>
         </motion.div>
     );
 }

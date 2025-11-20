@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Card from '../components/Card';
 
 export default function Contact() {
     return (
@@ -6,48 +7,54 @@ export default function Contact() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="container"
-            style={{ paddingTop: '120px', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            style={{ paddingTop: '120px', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingBottom: '3rem' }}
         >
-            <div style={{ textAlign: 'center', maxWidth: '600px' }}>
+            <div style={{ textAlign: 'center', maxWidth: '700px', width: '100%' }}>
                 <h1>Get In Touch</h1>
-                <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '3rem' }}>
+                <p style={{ fontSize: '1.3rem', color: 'var(--text-secondary)', marginBottom: '3rem', lineHeight: '1.7' }}>
                     I'm currently looking for new opportunities. Whether you have a question or just want to say hi,
                     I'll try my best to get back to you!
                 </p>
 
-                <div className="glass" style={{ padding: '2rem', marginBottom: '2rem' }}>
-                    <h3 style={{ marginBottom: '1.5rem' }}>Contact Information</h3>
-                    <p style={{ marginBottom: '1rem' }}>
-                        <strong>Email:</strong><br />
-                        <a href="mailto:mohanasiddhartha.chivukula@gmail.com" style={{ fontSize: '1.1rem' }}>
+                <Card delay={0.1} hover={false} style={{ marginBottom: '2.5rem' }}>
+                    <h3 style={{ marginBottom: '1.8rem', fontSize: '1.4rem' }}>Contact Information</h3>
+                    <p style={{ marginBottom: '1.5rem', lineHeight: '1.6' }}>
+                        <strong style={{ color: 'var(--accent)' }}>Email</strong><br />
+                        <a href="mailto:mohanasiddhartha.chivukula@gmail.com" style={{ fontSize: '1.15rem', marginTop: '0.5rem', display: 'inline-block' }}>
                             mohanasiddhartha.chivukula@gmail.com
                         </a>
                     </p>
-                    <p>
-                        <strong>Location:</strong><br />
-                        Tempe, AZ, USA
+                    <p style={{ lineHeight: '1.6' }}>
+                        <strong style={{ color: 'var(--accent)' }}>Location</strong><br />
+                        <span style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', marginTop: '0.5rem', display: 'inline-block' }}>
+                            Tempe, AZ, USA
+                        </span>
                     </p>
-                </div>
+                </Card>
 
                 <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                    <a
+                    <motion.a
                         href="https://www.linkedin.com/in/siddharthachivukula/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="glass"
-                        style={{ padding: '1rem 2rem', display: 'inline-block', fontWeight: 600 }}
+                        style={{ padding: '1.2rem 2.5rem', display: 'inline-block', fontWeight: 600, fontSize: '1.05rem' }}
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
                     >
                         LinkedIn
-                    </a>
-                    <a
+                    </motion.a>
+                    <motion.a
                         href="https://github.com/iamsiddhu3007"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="glass"
-                        style={{ padding: '1rem 2rem', display: 'inline-block', fontWeight: 600 }}
+                        style={{ padding: '1.2rem 2.5rem', display: 'inline-block', fontWeight: 600, fontSize: '1.05rem' }}
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
                     >
                         GitHub
-                    </a>
+                    </motion.a>
                 </div>
             </div>
         </motion.div>

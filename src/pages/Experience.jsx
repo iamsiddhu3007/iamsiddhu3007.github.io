@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Card from '../components/Card';
 
 const experiences = [
     {
@@ -51,44 +52,39 @@ export default function Experience() {
             style={{ paddingTop: '120px', minHeight: '100vh', paddingBottom: '3rem' }}
         >
             <h1>Professional Experience</h1>
-            <div style={{ maxWidth: '1000px' }}>
+            <div style={{ maxWidth: '1100px', marginTop: '2rem' }}>
                 {experiences.map((exp, idx) => (
-                    <motion.div
-                        key={idx}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: idx * 0.15 }}
-                        className="glass"
-                        style={{ padding: '2rem', marginBottom: '2rem' }}
-                    >
-                        <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
+                    <Card key={idx} delay={idx * 0.15} style={{ marginBottom: '2rem' }}>
+                        <h3 style={{ fontSize: '1.6rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
                             {exp.role}
                         </h3>
-                        <p style={{ color: 'var(--accent)', fontSize: '1.1rem', fontWeight: 600 }}>
+                        <p style={{ color: 'var(--accent)', fontSize: '1.2rem', fontWeight: 600, marginBottom: '0.3rem' }}>
                             {exp.company}
                         </p>
-                        <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.95rem' }}>
+                        <p style={{ color: 'var(--text-secondary)', marginBottom: '1.8rem', fontSize: '0.95rem' }}>
                             {exp.period} | {exp.location}
                         </p>
                         <ul style={{ listStyle: 'none', paddingLeft: 0 }}>
                             {exp.points.map((point, i) => (
                                 <li key={i} style={{
-                                    marginBottom: '0.7rem',
+                                    marginBottom: '0.9rem',
                                     paddingLeft: '1.5rem',
                                     position: 'relative',
-                                    lineHeight: '1.6'
+                                    lineHeight: '1.7',
+                                    color: 'var(--text-secondary)'
                                 }}>
                                     <span style={{
                                         position: 'absolute',
                                         left: 0,
                                         color: 'var(--accent)',
-                                        fontWeight: 'bold'
+                                        fontWeight: 'bold',
+                                        fontSize: '1.2rem'
                                     }}>▹</span>
                                     {point}
                                 </li>
                             ))}
                         </ul>
-                    </motion.div>
+                    </Card>
                 ))}
             </div>
         </motion.div>

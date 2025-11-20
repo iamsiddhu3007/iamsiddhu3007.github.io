@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Card from '../components/Card';
 
 const projects = [
     {
@@ -104,50 +105,45 @@ export default function Projects() {
             style={{ paddingTop: '120px', minHeight: '100vh', paddingBottom: '3rem' }}
         >
             <h1>Projects</h1>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '2rem', marginTop: '2rem' }}>
                 {projects.map((proj, idx) => (
-                    <motion.div
-                        key={idx}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: idx * 0.08 }}
-                        whileHover={{ scale: 1.03, translateY: -5 }}
-                        className="glass"
-                        style={{ padding: '1.8rem', display: 'flex', flexDirection: 'column' }}
-                    >
-                        <h3 style={{ fontSize: '1.3rem', marginBottom: '0.5rem', lineHeight: '1.3' }}>
+                    <Card key={idx} delay={idx * 0.05} style={{ display: 'flex', flexDirection: 'column' }}>
+                        <h3 style={{ fontSize: '1.4rem', marginBottom: '0.5rem', lineHeight: '1.3' }}>
                             {proj.name}
                         </h3>
                         {proj.university && (
-                            <p style={{ fontSize: '0.85rem', color: 'var(--accent)', marginBottom: '0.3rem', fontStyle: 'italic' }}>
+                            <p style={{ fontSize: '0.9rem', color: 'var(--accent)', marginBottom: '0.3rem', fontStyle: 'italic' }}>
                                 {proj.university}
                             </p>
                         )}
                         <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '1rem' }}>
                             {proj.period}
                         </p>
-                        <p style={{ marginBottom: '1rem', lineHeight: '1.6', flex: 1 }}>
+                        <p style={{ marginBottom: '1.2rem', lineHeight: '1.7', flex: 1, color: 'var(--text-secondary)' }}>
                             {proj.desc}
                         </p>
-                        <p style={{ color: 'var(--accent)', fontSize: '0.85rem', marginBottom: '1rem', fontWeight: 500 }}>
+                        <p style={{ color: 'var(--accent)', fontSize: '0.9rem', marginBottom: '1.2rem', fontWeight: 500 }}>
                             {proj.tech}
                         </p>
                         {proj.link && (
-                            <a
+                            <motion.a
                                 href={proj.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={{
-                                    fontSize: '0.95rem',
+                                    fontSize: '1rem',
                                     marginTop: 'auto',
-                                    display: 'inline-block',
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem',
                                     fontWeight: 600
                                 }}
+                                whileHover={{ gap: '0.8rem' }}
                             >
                                 View on GitHub →
-                            </a>
+                            </motion.a>
                         )}
-                    </motion.div>
+                    </Card>
                 ))}
             </div>
         </motion.div>
