@@ -1,4 +1,6 @@
 import React from 'react'
+import profilePic from './assets/profile.jpg'
+import resumePDF from './assets/resume.pdf'
 
 const projects = [
     { name: "Attrition Prediction Using Machine Learning", tech: "Python, Scikit-Learn, XGBoost, SMOTE,Pandas", period: "Aug 2024 – Dec 2024", description: "Predicted customer churn in e-commerce using Random Forest and XGBoost.", link: "#" },
@@ -31,14 +33,46 @@ const certifications = [
 function App() {
     return (
         <div className="container">
-            <section className="section">
-                <h1>Mohana Siddhartha Chivukula</h1>
-                <p style={{ fontSize: '1.2rem', color: '#60a5fa' }}>Software Developer & Data Engineer</p>
-                <p>
-                    Hi, I'm Mohana Siddhartha Chivukula, a graduate student at Arizona State University,
-                    pursuing a Master's degree in Computer Science. I build mobile apps, data pipelines,
-                    and clean CI/CD. Passionate about creating efficient, scalable solutions.
-                </p>
+            <section className="section" style={{ display: 'flex', gap: '3rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                <div style={{ flex: 1, minWidth: '300px' }}>
+                    <h1>Mohana Siddhartha Chivukula</h1>
+                    <p style={{ fontSize: '1.2rem', color: '#60a5fa', marginBottom: '1rem' }}>
+                        Software Developer & Data Engineer
+                    </p>
+                    <p style={{ marginBottom: '2rem' }}>
+                        Hi, I'm Mohana Siddhartha Chivukula, a graduate student at Arizona State University,
+                        pursuing a Master's degree in Computer Science. I build mobile apps, data pipelines,
+                        and clean CI/CD. Passionate about creating efficient, scalable solutions.
+                    </p>
+                    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                        <a href={resumePDF} download style={{
+                            backgroundColor: '#60a5fa',
+                            color: '#0a0a0a',
+                            padding: '0.8rem 1.5rem',
+                            borderRadius: '6px',
+                            fontWeight: 600,
+                            display: 'inline-block'
+                        }}>Download Resume</a>
+                        <a href="#contact" style={{
+                            border: '2px solid #60a5fa',
+                            color: '#60a5fa',
+                            padding: '0.8rem 1.5rem',
+                            borderRadius: '6px',
+                            fontWeight: 600,
+                            display: 'inline-block'
+                        }}>Contact Me</a>
+                    </div>
+                </div>
+                <div style={{ flex: '0 0 250px' }}>
+                    <img src={profilePic} alt="Siddhartha Chivukula" style={{
+                        width: '250px',
+                        height: '250px',
+                        borderRadius: '50%',
+                        objectFit: 'cover',
+                        border: '4px solid #60a5fa',
+                        boxShadow: '0 0 30px rgba(96, 165, 250, 0.3)'
+                    }} />
+                </div>
             </section>
 
             <section className="section">
