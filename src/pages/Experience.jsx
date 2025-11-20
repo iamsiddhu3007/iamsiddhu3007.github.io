@@ -30,7 +30,7 @@ const experiences = [
         skills: ["Flutter", "Dart", "REST APIs", "CI/CD", "GitHub Actions", "Mobile Dev"]
     },
     {
-        role: "BTSA Intern",
+        role: "Business Technology Solutions Associate Intern",
         company: "ZS Associates",
         period: "Jan 2024 – Jul 2024",
         location: "Gurugram, Haryana, India",
