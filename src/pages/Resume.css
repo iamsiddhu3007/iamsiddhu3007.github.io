@@ -41,19 +41,18 @@
 }
 
 .resume-viewer {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .pdf-iframe {
     width: 100%;
     height: calc(100vh - 200px);
     min-height: 600px;
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    background: var(--bg-glass);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 0;
+    background: white;
 }
 
 @media (max-width: 768px) {
@@ -77,7 +76,7 @@
     }
 
     .resume-viewer {
-        padding: 0 1rem;
+        padding: 0;
     }
 
     .pdf-iframe {
