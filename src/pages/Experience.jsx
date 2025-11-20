@@ -1,45 +1,49 @@
 import { motion } from 'framer-motion';
-import Card from '../components/Card';
+import './Experience.css';
 
 const experiences = [
     {
         role: "SCAI Grader",
         company: "Arizona State University",
         period: "Aug 2025 – Present",
-        location: "Tempe, Arizona, United States · Hybrid",
-        points: [
+        location: "Tempe, Arizona, United States",
+        type: "Part-time",
+        workMode: "Hybrid",
+        responsibilities: [
             "Assisting Prof. Jaejong Baek in grading and managing coursework for CSE 469: Computer and Network Forensics and CSE 543: Information Assurance and Security"
-        ]
+        ],
+        skills: ["Security", "Forensics", "Academic Support"]
     },
     {
         role: "Software Developer Intern",
         company: "Get SuperStars Inc.",
         period: "May 2025 – Aug 2025",
-        location: "United States · Remote",
-        points: [
-            "Built cross-platform mobile application using Flutter and Dart, focusing on professional design and development workflow",
-            "Implemented responsive front-end features and integrated with back-end services through RESTful APIs using Postman",
-            "Took full ownership of a cross-platform mobile app development, architecting Flutter/Dart UI and RESTful API integration to absorb high-volume traffic spikes with no user-visible slowdowns",
-            "Built and launched two customer-facing modules (Stories, Action Feed) in under six weeks by partnering with cross-functional teams, reducing runtime memory usage by 80% through allocation profiling and widget tree refactoring",
-            "Implemented a three-stage GitHub Actions workflow: Code Analysis, Build Verification, and Configuration Validation, adding automatic PR checks and achieving near-zero rollbacks (CI/CD, GitHub Actions, Pull Request Checks)",
-            "Participated in weekly sprint meetings to align on product strategy and development progress"
-        ]
+        location: "United States",
+        type: "Internship",
+        workMode: "Remote",
+        responsibilities: [
+            "Took full ownership of cross-platform mobile app development, architecting Flutter/Dart UI and RESTful API integration to handle high-volume traffic with zero slowdowns",
+            "Built and launched Stories & Action Feed modules in 6 weeks, reducing memory usage by 80% through profiling and refactoring",
+            "Implemented 3-stage GitHub Actions workflow with automatic PR checks, achieving near-zero rollbacks",
+            "Participated in weekly sprints with product teams to align on strategy and development progress"
+        ],
+        skills: ["Flutter", "Dart", "REST APIs", "CI/CD", "GitHub Actions", "Mobile Dev"]
     },
     {
         role: "Business Technology Solutions Associate",
         company: "ZS Associates",
         period: "Jan 2024 – Jul 2024",
-        location: "Gurugram, Haryana, India · On-site",
-        points: [
-            "Worked on large-scale data engineering project for a global pharmaceutical client, focusing on development of robust, multi-layered data warehouse architecture",
-            "Designed and implemented end-to-end ETL pipelines using Informatica IICS to extract, transform, and load complex commercial datasets into Snowflake cloud data warehouse",
-            "Developed 4 multi-layered data warehouse schemas (Staging, PSA, DWH, and DMT layers) to consolidate fragmented data sources and enable scalable storage and advanced analytics (SQL, Snowflake, Informatica IICS, Excel)",
-            "Built and maintained end-to-end ETL pipelines to extract, transform, and load data from 70+ vendor datasets, ensuring data quality, consistency, and optimized processing (ETL, SQL, Snowflake, Informatica IICS)",
-            "Led efforts to standardize and harmonize data from over 70 distinct vendor sources by aligning field names, formats, and schema structures",
-            "Ensured data consistency, accuracy, and completeness through rigorous data quality checks and transformation logic implemented via SQL",
-            "Contributed to creation of optimized SQL views for reporting layers, significantly improving data accessibility and performance for business teams",
-            "Awarded 'Dashing Debut' award for outstanding performance and technical contributions as a new team member (H1'24 Rewards & Recognition)"
-        ]
+        location: "Gurugram, Haryana, India",
+        type: "Full-time",
+        workMode: "On-site",
+        award: "Dashing Debut Award (H1'24)",
+        responsibilities: [
+            "Developed 4-layer data warehouse schemas (Staging, PSA, DWH, DMT) to consolidate fragmented data and enable scalable analytics",
+            "Built end-to-end ETL pipelines for 70+ vendor datasets using Informatica IICS and Snowflake, ensuring data quality and consistency",
+            "Led standardization efforts across 70+ vendor sources, aligning field names, formats, and schema structures",
+            "Created optimized SQL views for reporting layers, improving data accessibility and performance for business teams"
+        ],
+        skills: ["Snowflake", "SQL", "Informatica IICS", "ETL", "Data Warehousing", "Excel"]
     }
 ];
 
@@ -52,39 +56,79 @@ export default function Experience() {
             style={{ paddingTop: '120px', minHeight: '100vh', paddingBottom: '3rem' }}
         >
             <h1>Professional Experience</h1>
-            <div style={{ maxWidth: '1100px', marginTop: '2rem' }}>
+            <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '900px' }}>
+                My journey through software development, data engineering, and academic roles.
+            </p>
+
+            <div className="timeline-container">
                 {experiences.map((exp, idx) => (
-                    <Card key={idx} delay={idx * 0.15} style={{ marginBottom: '2rem' }}>
-                        <h3 style={{ fontSize: '1.6rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
-                            {exp.role}
-                        </h3>
-                        <p style={{ color: 'var(--accent)', fontSize: '1.2rem', fontWeight: 600, marginBottom: '0.3rem' }}>
-                            {exp.company}
-                        </p>
-                        <p style={{ color: 'var(--text-secondary)', marginBottom: '1.8rem', fontSize: '0.95rem' }}>
-                            {exp.period} | {exp.location}
-                        </p>
-                        <ul style={{ listStyle: 'none', paddingLeft: 0 }}>
-                            {exp.points.map((point, i) => (
-                                <li key={i} style={{
-                                    marginBottom: '0.9rem',
-                                    paddingLeft: '1.5rem',
-                                    position: 'relative',
-                                    lineHeight: '1.7',
-                                    color: 'var(--text-secondary)'
+                    <motion.div
+                        key={idx}
+                        className="timeline-item"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.1 }}
+                    >
+                        <div className="timeline-marker">
+                            <div className="timeline-dot"></div>
+                            <div className="timeline-line"></div>
+                        </div>
+
+                        <div className="experience-card">
+                            <div className="exp-header">
+                                <div className="exp-title-group">
+                                    <h3>{exp.role}</h3>
+                                    <p className="exp-company">{exp.company}</p>
+                                </div>
+                                <div className="exp-badges">
+                                    <span className="exp-badge">{exp.type}</span>
+                                    {exp.award && <span className="exp-badge award">Award</span>}
+                                </div>
+                            </div>
+
+                            <div className="exp-meta">
+                                <span>📅 {exp.period}</span>
+                                <span>📍 {exp.location}</span>
+                                <span>💼 {exp.workMode}</span>
+                            </div>
+
+                            {exp.award && (
+                                <div style={{
+                                    padding: '0.8rem 1.2rem',
+                                    background: 'linear-gradient(135deg, rgba(250, 204, 21, 0.15), rgba(251, 191, 36, 0.08))',
+                                    border: '1px solid rgba(250, 204, 21, 0.3)',
+                                    borderRadius: '12px',
+                                    color: '#fbbf24',
+                                    fontSize: '0.95rem',
+                                    fontWeight: 600,
+                                    marginBottom: '1.5rem',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem'
                                 }}>
-                                    <span style={{
-                                        position: 'absolute',
-                                        left: 0,
-                                        color: 'var(--accent)',
-                                        fontWeight: 'bold',
-                                        fontSize: '1.2rem'
-                                    }}>▹</span>
-                                    {point}
-                                </li>
-                            ))}
-                        </ul>
-                    </Card>
+                                    ⭐ {exp.award}
+                                </div>
+                            )}
+
+                            <div className="exp-responsibilities">
+                                <h4>Key Achievements</h4>
+                                <div className="responsibilities-grid">
+                                    {exp.responsibilities.map((resp, i) => (
+                                        <div key={i} className="responsibility-item">
+                                            <p>{resp}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="exp-skills">
+                                {exp.skills.map((skill, i) => (
+                                    <span key={i} className="skill-tag">{skill}</span>
+                                ))}
+                            </div>
+                        </div>
+                    </motion.div>
                 ))}
             </div>
         </motion.div>
