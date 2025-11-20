@@ -6,55 +6,61 @@ const certifications = [
         name: "Microsoft Azure AI Essentials",
         issuer: "Microsoft",
         date: "Sep 2025",
-        link: "#"
+        link: "https://www.linkedin.com/learning/certificates/d99e7617be731ef17e007d63d00671bc07b406b884339980e15a25b79ce66099"
     },
     {
         name: "Docker Foundations Professional Certificate",
         issuer: "Docker, Inc",
         date: "Aug 2025",
-        link: "#"
+        link: "https://www.linkedin.com/learning/certificates/87186bff9dc74ab2d328684167984eb878321ba2f0ed34535bd437a697fca073"
     },
     {
         name: "Goldman Sachs Software Engineering Job Simulation",
         issuer: "Forage",
         date: "Feb 2025",
-        link: "#"
+        link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/MBA4MnZTNFEoJZGnk/NPdeQ43o8P9HJmJzg_MBA4MnZTNFEoJZGnk_F3AzhPLHSypc9DodE_1738691881332_completion_certificate.pdf"
     },
     {
         name: "Tellius Advanced Insights & Predictive",
         issuer: "Tellius",
         date: "Feb 2024",
-        link: "#"
+        link: "https://www.linkedin.com/in/siddharthachivukula/details/certifications/1724801024742/single-media-viewer/?profileId=ACoAADP0W4cB52KY8_G87nFoj-ze3JIEOBWqP2I"
     },
     {
         name: "ThoughtSpot Professional Certification",
         issuer: "ThoughtSpot",
         date: "Feb 2024",
-        link: "#"
+        link: "https://www.linkedin.com/in/siddharthachivukula/details/certifications/1724800805531/single-media-viewer/?profileId=ACoAADP0W4cB52KY8_G87nFoj-ze3JIEOBWqP2I"
     },
     {
         name: "Blockchain Revolution Specialization",
         issuer: "Coursera",
         date: "Sep 2022",
-        link: "#"
+        link: "https://www.coursera.org/account/accomplishments/specialization/APBPRB9XY9HP?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n"
     },
     {
-        name: "Android Mobile App Development",
+        name: "Introduction to Android Mobile Application Development",
         issuer: "Meta (Coursera)",
         date: "Sep 2022",
-        link: "#"
+        link: "https://www.coursera.org/account/accomplishments/specialization/APBPRB9XY9HP?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n"
     },
     {
         name: "Introduction to Quantum Computing",
         issuer: "Udemy",
         date: "Sep 2022",
-        link: "#"
+        link: "https://udemy-certificate.s3.amazonaws.com/image/UC-82826000-97d0-477f-9755-a61b781596db.jpg"
+    },
+    {
+        name: "Getting Started With Figma",
+        issuer: "Coursera",
+        date: "Sep 2022",
+        link: "https://www.coursera.org/account/accomplishments/verify/PEPRHG4H54YD?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=project"
     },
     {
         name: "Big Data Integration and Processing",
         issuer: "Coursera",
         date: "Apr 2021",
-        link: "#"
+        link: "https://www.coursera.org/account/accomplishments/certificate/43MT2H3S6SDA"
     }
 ];
 
