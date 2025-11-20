@@ -1,77 +1,86 @@
 import { motion } from 'framer-motion';
 import Card from '../components/Card';
 import './About.css';
+import {
+    SiPython, SiDart, SiCplusplus, SiKotlin, SiMysql, SiJavascript,
+    SiNumpy, SiPandas, SiScikitlearn, SiTensorflow, SiFlask, SiReact,
+    SiHtml5, SiCss3, SiNodedotjs, SiPostgresql, SiMongodb, SiSnowflake,
+    SiGit, SiAndroidstudio, SiFlutter, SiPostman, SiGraphql, SiJira
+} from 'react-icons/si';
+import { FaCode, FaDatabase, FaCloud, FaTasks, FaTools, FaJava, FaAws, FaFileExcel } from 'react-icons/fa';
+import { MdCode } from 'react-icons/md';
 
 export default function About() {
     const skillCategories = [
         {
             title: "Programming",
-            icon: "💻",
+            icon: <FaCode />,
             skills: [
-                { name: "Python", icon: "🐍" },
-                { name: "Dart", icon: "🎯" },
-                { name: "C/C++", icon: "⚡" },
-                { name: "Java", icon: "☕" },
-                { name: "Kotlin", icon: "🅺" },
-                { name: "SQL", icon: "🗄️" },
-                { name: "JavaScript", icon: "📜" },
+                { name: "Python", icon: <SiPython />, tech: "python" },
+                { name: "Dart", icon: <SiDart />, tech: "dart" },
+                { name: "C/C++", icon: <SiCplusplus />, tech: "cpp" },
+                { name: "Java", icon: <FaJava />, tech: "java" },
+                { name: "Kotlin", icon: <SiKotlin />, tech: "kotlin" },
+                { name: "SQL", icon: <SiMysql />, tech: "mysql" },
+                { name: "JavaScript", icon: <SiJavascript />, tech: "javascript" },
             ]
         },
         {
             title: "Libraries & Frameworks",
-            icon: "📚",
+            icon: <MdCode />,
             skills: [
-                { name: "NumPy", icon: "🔢" },
-                { name: "Pandas", icon: "🐼" },
-                { name: "Scikit-learn", icon: "🤖" },
-                { name: "TensorFlow", icon: "🧠" },
-                { name: "Flask", icon: "🌶️" },
-                { name: "React", icon: "⚛️" },
+                { name: "NumPy", icon: <SiNumpy />, tech: "numpy" },
+                { name: "Pandas", icon: <SiPandas />, tech: "pandas" },
+                { name: "Scikit-learn", icon: <SiScikitlearn />, tech: "scikit" },
+                { name: "TensorFlow", icon: <SiTensorflow />, tech: "tensorflow" },
+                { name: "Flask", icon: <SiFlask />, tech: "flask" },
+                { name: "React", icon: <SiReact />, tech: "react" },
             ]
         },
         {
             title: "Web & Databases",
-            icon: "🌐",
+            icon: <FaDatabase />,
             skills: [
-                { name: "HTML/CSS", icon: "🎨" },
-                { name: "Node.js", icon: "🟢" },
-                { name: "MySQL", icon: "🐬" },
-                { name: "PostgreSQL", icon: "🐘" },
-                { name: "MongoDB", icon: "🍃" },
-                { name: "Snowflake", icon: "❄️" },
+                { name: "HTML", icon: <SiHtml5 />, tech: "html5" },
+                { name: "CSS", icon: <SiCss3 />, tech: "css3" },
+                { name: "Node.js", icon: <SiNodedotjs />, tech: "nodejs" },
+                { name: "MySQL", icon: <SiMysql />, tech: "mysql" },
+                { name: "PostgreSQL", icon: <SiPostgresql />, tech: "postgresql" },
+                { name: "MongoDB", icon: <SiMongodb />, tech: "mongodb" },
+                { name: "Snowflake", icon: <SiSnowflake />, tech: "snowflake" },
             ]
         },
         {
             title: "Cloud & DevOps",
-            icon: "☁️",
+            icon: <FaCloud />,
             skills: [
-                { name: "AWS S3", icon: "📦" },
-                { name: "AWS IAM", icon: "🔐" },
-                { name: "AWS Redshift", icon: "📊" },
-                { name: "AWS EC2", icon: "🖥️" },
-                { name: "CI/CD", icon: "🔄" },
-                { name: "Git", icon: "📝" },
+                { name: "AWS S3", icon: <FaAws />, tech: "aws" },
+                { name: "AWS IAM", icon: <FaAws />, tech: "aws" },
+                { name: "AWS Redshift", icon: <FaAws />, tech: "aws" },
+                { name: "AWS EC2", icon: <FaAws />, tech: "aws" },
+                { name: "CI/CD", icon: <SiGit />, tech: "git" },
+                { name: "Git", icon: <SiGit />, tech: "git" },
             ]
         },
         {
             title: "Tools & Platforms",
-            icon: "🛠️",
+            icon: <FaTools />,
             skills: [
-                { name: "Android Studio", icon: "📱" },
-                { name: "Flutter", icon: "🦋" },
-                { name: "Postman", icon: "📮" },
-                { name: "RESTful APIs", icon: "🔌" },
-                { name: "GraphQL", icon: "◈" },
-                { name: "Jira", icon: "📋" },
+                { name: "Android Studio", icon: <SiAndroidstudio />, tech: "android" },
+                { name: "Flutter", icon: <SiFlutter />, tech: "flutter" },
+                { name: "Postman", icon: <SiPostman />, tech: "postman" },
+                { name: "RESTful APIs", icon: <FaCode />, tech: "default" },
+                { name: "GraphQL", icon: <SiGraphql />, tech: "graphql" },
+                { name: "Jira", icon: <SiJira />, tech: "jira" },
             ]
         },
         {
             title: "Methodologies",
-            icon: "📐",
+            icon: <FaTasks />,
             skills: [
-                { name: "Agile", icon: "🏃" },
-                { name: "Waterfall", icon: "💧" },
-                { name: "Advanced Excel", icon: "📊" },
+                { name: "Agile", icon: <FaTasks />, tech: "default" },
+                { name: "Waterfall", icon: <FaTasks />, tech: "default" },
+                { name: "Advanced Excel", icon: <FaFileExcel />, tech: "excel" },
             ]
         }
     ];
@@ -114,7 +123,7 @@ export default function About() {
                                     whileHover={{ scale: 1.08, y: -3 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
-                                    <span className="skill-badge-icon">{skill.icon}</span>
+                                    <span className="skill-badge-icon" data-tech={skill.tech}>{skill.icon}</span>
                                     <span className="skill-badge-name">{skill.name}</span>
                                 </motion.div>
                             ))}
