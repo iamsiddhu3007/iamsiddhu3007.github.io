@@ -6,7 +6,6 @@ export default function CustomCursor() {
     const [isPointer, setIsPointer] = useState(false);
 
     const updatePosition = useCallback((e) => {
-        // Update position immediately - no throttling
         setPosition({ x: e.clientX, y: e.clientY });
 
         // Update CSS variables for background gradient

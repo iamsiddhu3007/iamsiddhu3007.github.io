@@ -3,43 +3,35 @@
     position: fixed;
     pointer-events: none;
     z-index: 9999;
-    transform: translate(-50%, -50%);
 }
 
 .custom-cursor {
-    width: 24px;
-    height: 24px;
-    background: rgba(96, 165, 250, 0.5);
-    border: 2px solid rgba(96, 165, 250, 0.9);
+    width: 12px;
+    height: 12px;
+    background: rgba(96, 165, 250, 0.8);
     border-radius: 50%;
-    box-shadow:
-        0 0 15px rgba(96, 165, 250, 0.6),
-        0 0 30px rgba(96, 165, 250, 0.3);
-    backdrop-filter: blur(2px);
-    /* No transition - instant movement */
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+    transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
 }
 
 .custom-cursor.pointer {
     width: 40px;
     height: 40px;
-    background: rgba(167, 139, 250, 0.4);
-    border-color: rgba(167, 139, 250, 1);
-    box-shadow:
-        0 0 20px rgba(167, 139, 250, 0.7),
-        0 0 40px rgba(167, 139, 250, 0.4);
-    transition: all 0.2s ease;
+    background: rgba(96, 165, 250, 0.3);
+    border: 2px solid rgba(96, 165, 250, 0.8);
 }
 
 .cursor-glow {
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgba(96, 165, 250, 0.08) 0%, transparent 70%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.05) 0%, transparent 70%);
     filter: blur(40px);
-    opacity: 0.7;
-    /* No transition - moves instantly with cursor */
+    opacity: 0.5;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s ease;
 }
 
 .cursor-glow.pointer {
-    background: radial-gradient(circle, rgba(167, 139, 250, 0.12) 0%, transparent 70%);
-    opacity: 0.9;
+    opacity: 0.7;
 }
