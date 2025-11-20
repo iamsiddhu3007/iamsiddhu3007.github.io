@@ -6,15 +6,14 @@ export default function CustomCursor() {
     const [isPointer, setIsPointer] = useState(false);
 
     const updatePosition = useCallback((e) => {
+        // Update position immediately - no throttling
         setPosition({ x: e.clientX, y: e.clientY });
 
-        // Throttled background gradient update using requestAnimationFrame
-        requestAnimationFrame(() => {
-            const xPercent = (e.clientX / window.innerWidth) * 100;
-            const yPercent = (e.clientY / window.innerHeight) * 100;
-            document.documentElement.style.setProperty('--cursor-x', `${xPercent}%`);
-            document.documentElement.style.setProperty('--cursor-y', `${yPercent}%`);
-        });
+        // Update CSS variables for background gradient
+        const xPercent = (e.clientX / window.innerWidth) * 100;
+        const yPercent = (e.clientY / window.innerHeight) * 100;
+        document.documentElement.style.setProperty('--cursor-x', `${xPercent}%`);
+        document.documentElement.style.setProperty('--cursor-y', `${yPercent}%`);
     }, []);
 
     const updateCursorType = useCallback((e) => {
