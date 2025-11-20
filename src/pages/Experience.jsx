@@ -30,11 +30,11 @@ const experiences = [
         skills: ["Flutter", "Dart", "REST APIs", "CI/CD", "GitHub Actions", "Mobile Dev"]
     },
     {
-        role: "Business Technology Solutions Associate",
+        role: "BTSA Intern",
         company: "ZS Associates",
         period: "Jan 2024 – Jul 2024",
         location: "Gurugram, Haryana, India",
-        type: "Full-time",
+        type: "Internship",
         workMode: "On-site",
         award: "Dashing Debut Award (H1'24)",
         responsibilities: [
