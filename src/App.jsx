@@ -1,5 +1,33 @@
 import React from 'react'
 
+const projects = [
+    { name: "Attrition Prediction Using Machine Learning", tech: "Python, Scikit-Learn, XGBoost, SMOTE,Pandas", period: "Aug 2024 – Dec 2024", description: "Predicted customer churn in e-commerce using Random Forest and XGBoost.", link: "#" },
+    { name: "Financial Systems Blockchain Security", tech: "Blockchain, Machine Learning, Cryptography", period: "Aug 2024 – Dec 2024", description: "Investigated blockchain for financial data integrity and fraud prevention.", link: "#" },
+    { name: "AI-Powered Multiplayer Tic-Tac-Toe", tech: "Android, Java/Kotlin, Bluetooth", period: "Sep 2024 – Oct 2024", description: "Built an Android game with AI (Minimax + Alpha-Beta Pruning).", link: "#" },
+    { name: "Context Monitoring App", tech: "Kotlin, CameraX, RealmDB", period: "Sep 2024", description: "Context-aware Android health app using CameraX for heart rate monitoring.", link: "#" },
+    { name: "Promptly", tech: "React, Python, LLM APIs", period: "May 2025 – Jul 2025", description: "Modular LLM agent framework with tool chaining and RAG support.", link: "#" },
+    { name: "Optimizers in Deep Models", tech: "Vision Transformers, Python, Tensorflow", period: "Aug 2023 – Dec 2023", description: "Analyzed optimizers on Vision Transformers. 92.96% accuracy on CIFAR 10.", link: "#" },
+    { name: "StockVision", tech: "Flask, React.js, Tailwind CSS, Python", period: "Jan 2023 – May 2023", description: "Real-time stock analysis with AI-driven 7-day price forecasts.", link: "https://github.com/cmdsiraj/stock_vision" },
+    { name: "Tweet Search and Classification", tech: "Python, Scikit-Learn, NLP", period: "Jan 2023 – May 2023", description: "ML models for tweet classification with ranking system.", link: "https://github.com/iamsiddhu3007/Information-retrieval-project" },
+    { name: "Sokoban Solver", tech: "Python, AI Search Algorithms", period: "Aug 2022 – Nov 2022", description: "Advanced algorithms (A*, IDA*) for solving Sokoban puzzles.", link: "https://github.com/aaaa760/sokoban" },
+    { name: "The Holiday Destination", tech: "PHP, MySQL, Tailwind CSS", period: "Aug 2022 – Nov 2022", description: "Full-stack travel booking application.", link: "https://github.com/Hemanth-Boyapati/HolidayDestination" },
+    { name: "Library Management System", tech: "Java, OOP", period: "Aug 2021 – Nov 2021", description: "Library management with user accounts and book borrowing.", link: "https://github.com/iamsiddhu3007/Library-Management-System" }
+]
+
+const certifications = [
+    { name: "Microsoft Azure AI Essentials", issuer: "Microsoft", date: "Sep 2025" },
+    { name: "Docker Foundations Professional Certificate", issuer: "Docker, Inc", date: "Aug 2025" },
+    { name: "Goldman Sachs - Software Engineering Job Simulation", issuer: "Forage", date: "Feb 2025" },
+    { name: "Tellius Advanced Insights & Predictive!", issuer: "Tellius", date: "Feb 2024" },
+    { name: "Tellius Search & Insights!", issuer: "Tellius", date: "Feb 2024" },
+    { name: "Tellius Search Ninja!", issuer: "Tellius", date: "Feb 2024" },
+    { name: "ThoughtSpot Professional Certification", issuer: "ThoughtSpot", date: "Feb 2024" },
+    { name: "Blockchain Revolution Specialization", issuer: "Coursera", date: "Sep 2022" },
+    { name: "Introduction to Android Mobile Application Development", issuer: "Meta (Coursera)", date: "Sep 2022" },
+    { name: "Introduction to Quantum Computing", issuer: "Udemy", date: "Sep 2022" },
+    { name: "Big Data Integration and Processing", issuer: "Coursera", date: "Apr 2021" }
+]
+
 function App() {
     return (
         <div className="container">
@@ -31,6 +59,47 @@ function App() {
                     <h3 style={{ color: '#ffffff' }}>BTS Associate Intern @ ZS Associates</h3>
                     <p style={{ color: '#888' }}>Jan 2024 – July 2024 | Gurugram, India</p>
                     <p>Designed multi‑layer Snowflake DWH; developed IICS pipelines for 70+ vendor feeds.</p>
+                </div>
+            </section>
+
+            <section className="section">
+                <h2>Projects</h2>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
+                    {projects.map((project, idx) => (
+                        <div key={idx} style={{
+                            backgroundColor: '#1a1a1a',
+                            padding: '1.5rem',
+                            borderRadius: '8px',
+                            border: '1px solid #333'
+                        }}>
+                            <h3 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: '0.5rem' }}>{project.name}</h3>
+                            <p style={{ color: '#888', fontSize: '0.85rem', marginBottom: '0.5rem' }}>{project.period}</p>
+                            <p style={{ fontSize: '0.9rem', marginBottom: '1rem' }}>{project.description}</p>
+                            <p style={{ color: '#60a5fa', fontSize: '0.85rem' }}>{project.tech}</p>
+                            {project.link !== '#' && (
+                                <a href={project.link} target="_blank" rel="noopener noreferrer"
+                                    style={{ color: '#60a5fa', fontSize: '0.9rem' }}>View Project →</a>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section className="section">
+                <h2>Certifications</h2>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '1rem' }}>
+                    {certifications.map((cert, idx) => (
+                        <div key={idx} style={{
+                            backgroundColor: '#1a1a1a',
+                            padding: '1rem',
+                            borderRadius: '8px',
+                            border: '1px solid #333'
+                        }}>
+                            <h3 style={{ color: '#ffffff', fontSize: '1rem', marginBottom: '0.3rem' }}>{cert.name}</h3>
+                            <p style={{ color: '#60a5fa', fontSize: '0.85rem' }}>{cert.issuer}</p>
+                            <p style={{ color: '#888', fontSize: '0.8rem' }}>{cert.date}</p>
+                        </div>
+                    ))}
                 </div>
             </section>
 
