@@ -23,57 +23,71 @@ const asuCourses = {
 };
 
 const snuCourses = {
+    "Programming Fundamentals": [
+        { code: "CSD101", name: "Introduction to Computing and Programming" },
+        { code: "CSD213", name: "Object Oriented Programming" },
+        { code: "CCC634", name: "A Gentle Introduction to Python" }
+    ],
     "Core Computer Science": [
-        "Introduction to Computing and Programming",
-        "Object Oriented Programming",
-        "Discrete Mathematics",
-        "Data Structures",
-        "Computer Organization and Architecture",
-        "Introduction to Database Systems",
-        "Design and Analysis of Algorithms",
-        "Software Design Lab",
-        "Applied Cryptography",
-        "Introduction To Cyber Security Tools & Cyber Attacks",
-        "Ethical Hacking",
-        "Introduction to Artificial Intelligence",
-        "Computer Networks",
-        "Software Engineering",
-        "Software Project Management - Planning, Execution, Evaluation And Control",
-        "Theory of Computation",
-        "Compiler",
-        "Information Retrieval",
-        "Operating Systems",
-        "Signals and Systems",
-        "Applied Linear Algebra"
+        { code: "CSD201", name: "Data Structures" },
+        { code: "CSD205", name: "Discrete Mathematics" },
+        { code: "CSD211", name: "Computer Organization and Architecture" },
+        { code: "CSD204", name: "Operating Systems" },
+        { code: "CSD317", name: "Introduction to Database Systems" },
+        { code: "CSD319", name: "Design and Analysis of Algorithms" },
+        { code: "CSD345", name: "Software Design Lab" },
+        { code: "CSD304", name: "Computer Networks" },
+        { code: "CSD326", name: "Software Engineering" },
+        { code: "CSD334", name: "Theory of Computation" },
+        { code: "CSD346", name: "Seminar" }
     ],
     "Data Science & AI": [
-        "Big Data-Modelling, Integration and Processing",
-        "Image Processing and Its Applications",
-        "Introduction to Probability and Statistics",
-        "A Gentle Introduction to Python",
-        "Analysis and Business Modelling Using Excel",
-        "Python For Data Science",
-        "Data Mining and Warehousing",
-        "Project-2/Internship"
+        { code: "CCC662", name: "Big Data - Modelling, Integration and Processing" },
+        { code: "CSD210", name: "Introduction to Probability and Statistics" },
+        { code: "CSD357", name: "Image Processing and Its Applications" },
+        { code: "CSD311", name: "Artificial Intelligence" },
+        { code: "CCC805", name: "Analysis and Business Modelling Using Excel" },
+        { code: "CSD358", name: "Information Retrieval" },
+        { code: "CSD455", name: "Data Mining and Warehousing" },
+        { code: "SWC605", name: "Python for Data Science" }
     ],
-    "Electrical & Engineering": [
-        "Materials Science and Engineering",
-        "Introduction to Physics I & II",
-        "Introduction to Electrical Engineering",
-        "Intro Dynamics for Teams",
-        "Mathematical Methods I & II",
-        "Engineering Science & Design",
-        "Introduction to Robotics"
+    "Security & Blockchain": [
+        { code: "CCC673", name: "Introduction to Cyber Security Tools & Cyber Attacks" },
+        { code: "CSD451", name: "Applied Cryptography" },
+        { code: "SWM320", name: "Ethical Hacking" },
+        { code: "CCC663", name: "Blockchain - Business Application and Analysis" }
     ],
-    "General Education": [
-        "Introduction to Psychology",
-        "Public Speaking and Persuasion",
-        "Evolution of life",
-        "The Brain",
-        "The modern world--Global history since 1760",
-        "Environmental Studies",
-        "Cancer, a Deadly Disease: Myths and facts",
-        "Principles of Management"
+    "Electrical & Electronics": [
+        { code: "EED101", name: "Introduction to Electrical Engineering" },
+        { code: "EED201", name: "Signals and Systems" },
+        { code: "EED210", name: "Digital Electronics" },
+        { code: "CCC515", name: "Introduction to Robotics" }
+    ],
+    "Engineering Fundamentals": [
+        { code: "MAT103", name: "Mathematical Methods I" },
+        { code: "MAT104", name: "Mathematical Methods II" },
+        { code: "PHY101", name: "Introduction to Physics I" },
+        { code: "PHY102", name: "Introduction to Physics II" },
+        { code: "MAT161", name: "Applied Linear Algebra" },
+        { code: "MED201", name: "Materials Science and Engineering" },
+        { code: "ESD201", name: "Engineering Science & Design" },
+        { code: "OHM401", name: "Group Dynamics for Teams" }
+    ],
+    "General Education & Management": [
+        { code: "CCC518", name: "Introduction to Psychology" },
+        { code: "CCC245", name: "The Modern World - Global History Since 1760" },
+        { code: "CCC704", name: "Environmental Studies" },
+        { code: "CCC343", name: "Public Speaking and Persuasion" },
+        { code: "CCC435", name: "Evolution of Life" },
+        { code: "CCC522", name: "The Brain" },
+        { code: "CCC419", name: "Cancer, a Deadly Disease: Myths and Facts" },
+        { code: "CCC416", name: "Science of Drug Addiction and Awareness" },
+        { code: "SWE307", name: "Principles of Management" },
+        { code: "SWE210", name: "Project Management: Planning, Execution, Evaluation and Control" }
+    ],
+    "Capstone Projects": [
+        { code: "CSD493", name: "Project-1" },
+        { code: "CSD494", name: "Project-2 / Internship" }
     ]
 };
 
@@ -85,7 +99,6 @@ export default function Education() {
             period: "Aug 2024 – May 2026",
             location: "Tempe, Arizona, United States",
             gpa: "4.0/4.0",
-            type: "semester",
             courses: asuCourses
         },
         {
@@ -94,7 +107,6 @@ export default function Education() {
             period: "Aug 2020 – May 2024",
             location: "Greater Noida, Uttar Pradesh, India",
             gpa: "7.61/10",
-            type: "category",
             courses: snuCourses
         }
     ];
@@ -141,38 +153,21 @@ export default function Education() {
                             {Object.entries(edu.courses).map(([key, items], catIdx) => (
                                 <div key={key} className="courses-section">
                                     <h3 className="course-category-title">{key}</h3>
-                                    {edu.type === 'semester' ? (
-                                        <div className="courses-grid">
-                                            {items.map((course, i) => (
-                                                <motion.div
-                                                    key={i}
-                                                    className="course-card"
-                                                    initial={{ opacity: 0, y: 10 }}
-                                                    whileInView={{ opacity: 1, y: 0 }}
-                                                    viewport={{ once: true }}
-                                                    transition={{ delay: i * 0.03 }}
-                                                >
-                                                    <span className="course-code">{course.code}</span>
-                                                    <p className="course-name">{course.name}</p>
-                                                </motion.div>
-                                            ))}
-                                        </div>
-                                    ) : (
-                                        <div>
-                                            {items.map((course, i) => (
-                                                <motion.div
-                                                    key={i}
-                                                    className="course-item"
-                                                    initial={{ opacity: 0 }}
-                                                    whileInView={{ opacity: 1 }}
-                                                    viewport={{ once: true }}
-                                                    transition={{ delay: i * 0.02 }}
-                                                >
-                                                    {course}
-                                                </motion.div>
-                                            ))}
-                                        </div>
-                                    )}
+                                    <div className="courses-grid">
+                                        {items.map((course, i) => (
+                                            <motion.div
+                                                key={i}
+                                                className="course-card"
+                                                initial={{ opacity: 0, y: 10 }}
+                                                whileInView={{ opacity: 1, y: 0 }}
+                                                viewport={{ once: true }}
+                                                transition={{ delay: i * 0.03 }}
+                                            >
+                                                <span className="course-code">{course.code}</span>
+                                                <p className="course-name">{course.name}</p>
+                                            </motion.div>
+                                        ))}
+                                    </div>
                                 </div>
                             ))}
                         </div>
