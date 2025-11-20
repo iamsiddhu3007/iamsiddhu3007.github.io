@@ -36,6 +36,7 @@ export default function Navbar() {
         { path: '/projects', label: 'Projects' },
         { path: '/education', label: 'Education' },
         { path: '/certifications', label: 'Certifications' },
+        { path: '/resume', label: 'Resume' },
         { path: '/contact', label: 'Contact' }
     ];
 
