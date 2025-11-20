@@ -118,18 +118,6 @@ export default function Certifications() {
                     </motion.div>
                 ))}
             </div>
-
-            <motion.div
-                className="cert-note-card"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-            >
-                <p>
-                    <strong>Note:</strong> Certificate links are placeholders and will be updated with actual credential URLs.
-                </p>
-            </motion.div>
         </motion.div>
     );
 }
