@@ -6,12 +6,68 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Privacy Policy - Siddhartha Chivukula</title>
-    <link rel="stylesheet" crossorigin href="/assets/index-CqE_u9Vc.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cursor-x: 50%;
+            --cursor-y: 50%;
+        }
+
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+            transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            min-height: 100vh;
+        }
+
+        body.light-mode {
+            --bg-primary: radial-gradient(circle at var(--cursor-x) var(--cursor-y), #f0f9ff 0%, #e0f2fe 30%, #bae6fd 100%);
+            --bg-glass: rgba(255, 255, 255, 0.6);
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent: #0284c7;
+            --accent-secondary: #a78bfa;
+            --border: rgba(2, 132, 199, 0.2);
+            --nav-border: rgba(2, 132, 199, 0.2);
+            --nav-button-bg: rgba(255, 255, 255, 0.4);
+            --nav-button-hover: rgba(2, 132, 199, 0.2);
+        }
+
+        body.dark-mode {
+            --bg-primary: radial-gradient(circle at var(--cursor-x) var(--cursor-y), #0a0a0a 0%, #0f0f1a 30%, #12162e 100%);
+            --bg-glass: rgba(255, 255, 255, 0.08);
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --accent: #60a5fa;
+            --accent-secondary: #a78bfa;
+            --border: rgba(96, 165, 250, 0.2);
+            --nav-border: rgba(96, 165, 250, 0.25);
+            --nav-button-bg: rgba(255, 255, 255, 0.08);
+            --nav-button-hover: rgba(96, 165, 250, 0.2);
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-primary);
+            z-index: -1;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         .privacy-page {
             padding-top: 100px;
             min-height: 100vh;
             padding-bottom: 4rem;
+            color: var(--text-primary);
         }
 
         .privacy-container {
@@ -28,6 +84,11 @@
         .privacy-header h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .privacy-updated {
@@ -51,9 +112,7 @@
             margin-top: 2.5rem;
             margin-bottom: 1rem;
             color: var(--text-primary);
-            background: none;
-            -webkit-background-clip: unset;
-            -webkit-text-fill-color: unset;
+            font-weight: 700;
         }
 
         .privacy-content h2:first-child {
@@ -72,13 +131,24 @@
             font-weight: 600;
         }
 
+        .privacy-content a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .privacy-content a:hover {
+            color: var(--accent-secondary);
+            text-decoration: underline;
+        }
+
         .back-home {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             padding: 0.8rem 1.5rem;
             background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-            color: #fff;
+            color: #fff !important;
             border-radius: 12px;
             font-size: 1rem;
             font-weight: 600;
@@ -91,29 +161,6 @@
         .back-home:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 25px rgba(96, 165, 250, 0.4);
-            color: #fff;
-        }
-
-        @media (max-width: 768px) {
-            .privacy-page {
-                padding-top: 90px;
-            }
-
-            .privacy-container {
-                padding: 0 1rem;
-            }
-
-            .privacy-header h1 {
-                font-size: 2rem;
-            }
-
-            .privacy-content {
-                padding: 2rem 1.5rem;
-            }
-
-            .privacy-content h2 {
-                font-size: 1.5rem;
-            }
         }
 
         /* Theme Toggle Button */
@@ -136,15 +183,37 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 1px 0 0 var(--nav-button-highlight) inset, 0 4px 12px var(--nav-button-shadow);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
 
         .theme-toggle-standalone:hover {
             background: var(--nav-button-hover);
             border-color: var(--accent);
-            box-shadow: 0 1px 0 0 var(--nav-button-highlight) inset, 0 6px 20px var(--nav-button-shadow-hover);
             transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(96, 165, 250, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .privacy-page {
+                padding-top: 90px;
+            }
+
+            .privacy-container {
+                padding: 0 1rem;
+            }
+
+            .privacy-header h1 {
+                font-size: 2rem;
+            }
+
+            .privacy-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .privacy-content h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
