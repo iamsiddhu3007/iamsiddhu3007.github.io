@@ -12,6 +12,7 @@ import Education from './pages/Education'
 import Certifications from './pages/Certifications'
 import Contact from './pages/Contact'
 import Resume from './pages/Resume'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 import './index.css'
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
                     <Route path="/certifications" element={<Certifications />} />
                     <Route path="/resume" element={<Resume />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 </Routes>
             </AnimatePresence>
         </BrowserRouter>

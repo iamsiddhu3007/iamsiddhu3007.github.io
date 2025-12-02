@@ -413,6 +413,17 @@ export default function Home() {
                     </Card>
                 </div>
             </section>
+
+            {/* Footer */}
+            <footer className="footer">
+                <div className="container">
+                    <p>
+                        <Link to="/privacy-policy" onClick={() => window.scrollTo(0, 0)}>
+                            Privacy Policy
+                        </Link>
+                    </p>
+                </div>
+            </footer>
         </div>
     );
 }
