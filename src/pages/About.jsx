@@ -72,6 +72,7 @@ export default function About() {
                 { name: "RESTful APIs", icon: <FaCode />, tech: "default" },
                 { name: "GraphQL", icon: <SiGraphql />, tech: "graphql" },
                 { name: "Jira", icon: <SiJira />, tech: "jira" },
+                { name: "Advanced Excel", icon: <FaFileExcel />, tech: "excel" },
             ]
         },
         {
@@ -80,7 +81,6 @@ export default function About() {
             skills: [
                 { name: "Agile", icon: <FaTasks />, tech: "default" },
                 { name: "Waterfall", icon: <FaTasks />, tech: "default" },
-                { name: "Advanced Excel", icon: <FaFileExcel />, tech: "excel" },
             ]
         }
     ];

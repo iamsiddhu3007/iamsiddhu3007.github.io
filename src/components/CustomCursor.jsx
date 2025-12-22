@@ -4,6 +4,7 @@ import './CustomCursor.css';
 export default function CustomCursor() {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [isPointer, setIsPointer] = useState(false);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
 
     const updatePosition = useCallback((e) => {
         setPosition({ x: e.clientX, y: e.clientY });
@@ -26,14 +27,31 @@ export default function CustomCursor() {
     }, []);
 
     useEffect(() => {
-        window.addEventListener('mousemove', updatePosition, { passive: true });
-        window.addEventListener('mouseover', updateCursorType, { passive: true });
+        // Check if it's a touch device
+        const checkTouchDevice = () => {
+            return ('ontouchstart' in window) ||
+                   (navigator.maxTouchPoints > 0) ||
+                   (navigator.msMaxTouchPoints > 0) ||
+                   (window.innerWidth <= 1024);
+        };
+
+        setIsTouchDevice(checkTouchDevice());
+
+        if (!checkTouchDevice()) {
+            window.addEventListener('mousemove', updatePosition, { passive: true });
+            window.addEventListener('mouseover', updateCursorType, { passive: true });
+        }
 
         return () => {
             window.removeEventListener('mousemove', updatePosition);
             window.removeEventListener('mouseover', updateCursorType);
         };
     }, [updatePosition, updateCursorType]);
+
+    // Don't render custom cursor on touch devices
+    if (isTouchDevice) {
+        return null;
+    }
 
     return (
         <>
