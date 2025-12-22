@@ -19,6 +19,9 @@ const asuCourses = {
         { code: "CSE 511", name: "Data Processing at Scale" },
         { code: "CSE 539", name: "Applied Cryptography" },
         { code: "CSE 548", name: "Engr Blockchain Applications" }
+    ],
+    "Spring 2026": [
+        { code: "CSE 575", name: "Statistical Machine Learning" }
     ]
 };
 
