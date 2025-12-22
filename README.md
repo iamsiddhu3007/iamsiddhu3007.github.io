@@ -13,47 +13,186 @@ Software Developer | Graduate Student @ Arizona State University
 
 I'm pursuing a Master's in Computer Science at ASU (GPA: 4.0/4.0) with expertise in mobile development, full-stack web applications, data engineering, and AI/ML. Looking for full-time SWE roles starting May 2026.
 
-### 💼 Professional Experience
+### 📞 Contact Information
 
-#### SCAI Grader - Arizona State University
-**Aug 2025 – Present | Tempe, Arizona**
-- Assisting Prof. Jaejong Baek in grading and managing coursework
-- **Fall 2025:** CSE 469 (Computer and Network Forensics) and CSE 543 (Information Assurance and Security)
-- **Spring 2026:** CSE 535 (Mobile Computing), CSE 543, and CSE 469
+- 📧 **Email:** mohanasiddhartha.chivukula@gmail.com
+- 🔗 **LinkedIn:** [linkedin.com/in/siddharthachivukula](https://linkedin.com/in/siddharthachivukula/)
+- 💻 **GitHub:** [github.com/iamsiddhu3007](https://github.com/iamsiddhu3007)
+- 🌐 **Portfolio:** [iamsiddhu3007.github.io](https://iamsiddhu3007.github.io)
+- 📍 **Location:** Tempe, AZ, USA
 
-#### Software Developer Intern - Get SuperStars Inc.
-**May 2025 – Aug 2025 | Remote**
-- Architected Flutter/Dart UI and RESTful API integration for cross-platform mobile apps
-- Built and launched Stories & Action Feed modules in 6 weeks, reducing memory usage by 80%
-- Implemented 3-stage GitHub Actions workflow with automatic PR checks, achieving near-zero rollbacks
-- Participated in weekly sprints with product teams
+---
 
-#### Business Technology Solutions Associate Intern - ZS Associates
-**Jan 2024 – Jul 2024 | Gurugram, India**
-- Developed 4-layer data warehouse schemas (Staging, PSA, DWH, DMT) for scalable analytics
-- Built end-to-end ETL pipelines for 70+ vendor datasets using Informatica IICS and Snowflake
-- Led standardization efforts across 70+ vendor sources
-- Created optimized SQL views for reporting layers
-- **Award:** Dashing Debut Award (H1'24)
+## 🎓 Education
 
-### 🎓 Education
-
-#### Arizona State University
+### Arizona State University
 **Master of Science - Computer Science**
 **Aug 2024 – May 2026 | GPA: 4.0/4.0**
 
 **Courses by Semester:**
 - **Fall 2024:** CSE 535 (Mobile Computing), CSE 543 (Info Assurance & Security), CSE 572 (Data Mining)
 - **Spring 2025:** CSE 565 (Software Verif/Validation/Test), CSE 578 (Data Visualization), CSE 579 (Knowledge Representation)
-- **Summer 2025:** CSE 584 (Internship - Get SuperStars Inc.)
+- **Summer 2025:** CSE 584 (Internship - Curricular Practical Training - Get SuperStars Inc.)
 - **Fall 2025:** CSE 511 (Data Processing at Scale), CSE 539 (Applied Cryptography), CSE 548 (Engr Blockchain Applications)
 - **Spring 2026:** CSE 575 (Statistical Machine Learning)
 
-#### Shiv Nadar University
+### Shiv Nadar University
 **B.Tech - Computer Science & Engineering**
 **Aug 2020 – May 2024 | GPA: 7.61/10**
 
+**Major Projects:**
+- **CSD493:** Project-1 (Optimizers in Deep Models)
+- **CSD494:** Internship (ZS Associates)
+
 ---
+
+## 💼 Professional Experience
+
+### SCAI Grader - Arizona State University
+**Aug 2025 – Present | Tempe, Arizona | Part-time | Hybrid**
+
+Assisting Prof. Jaejong Baek in grading and managing coursework:
+- **Fall 2025:** CSE 469 (Computer and Network Forensics) and CSE 543 (Information Assurance and Security)
+- **Spring 2026:** CSE 535 (Mobile Computing), CSE 543 (Information Assurance and Security), and CSE 469 (Computer and Network Forensics)
+
+**Skills:** Security, Forensics, Academic Support
+
+### Software Developer Intern - Get SuperStars Inc.
+**May 2025 – Aug 2025 | Remote | Internship**
+
+- Took full ownership of cross-platform mobile app development, architecting Flutter/Dart UI and RESTful API integration to handle high-volume traffic with zero slowdowns
+- Built and launched Stories & Action Feed modules in 6 weeks, reducing memory usage by 80% through profiling and refactoring
+- Implemented 3-stage GitHub Actions workflow with automatic PR checks, achieving near-zero rollbacks
+- Participated in weekly sprints with product teams to align on strategy and development progress
+
+**Skills:** Flutter, Dart, REST APIs, CI/CD, GitHub Actions, Mobile Dev
+
+### Business Technology Solutions Associate Intern - ZS Associates
+**Jan 2024 – Jul 2024 | Gurugram, Haryana, India | On-site | Internship**
+
+- Developed 4-layer data warehouse schemas (Staging, PSA, DWH, DMT) to consolidate fragmented data and enable scalable analytics
+- Built end-to-end ETL pipelines for 70+ vendor datasets using Informatica IICS and Snowflake, ensuring data quality and consistency
+- Led standardization efforts across 70+ vendor sources, aligning field names, formats, and schema structures
+- Created optimized SQL views for reporting layers, improving data accessibility and performance for business teams
+
+**Award:** Dashing Debut Award (H1'24)
+**Skills:** Snowflake, SQL, Informatica IICS, ETL, Data Warehousing, Excel
+
+---
+
+## 🚀 Featured Projects
+
+### 1. Promptly
+**May 2025 – Jul 2025**
+
+Designed a modular LLM agent framework with pluggable APIs, tool chaining, and a role-based system prompt. Implemented a vector-backed knowledge base enabling multi-step learning, multi-shot execution, and contextual memory. Led the development of a web application and included a tool where the agent can create a downloadable pdf.
+
+**Tech:** React, Python, LLM APIs (Gemini, Groq), Ollama
+**Skills:** React, Python, LLMs, RAG
+
+### 2. Attrition Prediction Using Machine Learning
+**Aug 2024 – Dec 2024 | Arizona State University**
+
+Predicted customer churn in e-commerce sector for Data Mining course. Implemented ML models including Random Forest and XGBoost. Conducted feature engineering, data preprocessing (handling missing values, outliers, class imbalance using SMOTE), and hyperparameter tuning. Developed data visualizations to uncover customer behavior insights.
+
+**Tech:** Python, XGBoost, Random Forest, SMOTE
+
+### 3. Improve Data Integrity and Security in Financial Systems using Blockchain
+**Aug 2024 – Dec 2024 | Arizona State University**
+
+Investigated blockchain's potential to revolutionize financial systems for CSE 543. Conducted research on blockchain applications in financial data security, fraud detection, and DeFi. Explored integration of ML models for transaction classification and anomaly detection. Proposed hybrid blockchain solutions and documented advanced cryptographic techniques.
+
+**Tech:** Blockchain, ML (K-means, Random Forest), Cryptography
+
+### 4. AI-Powered Multiplayer Tic-Tac-Toe Mobile Game
+**Sep 2024 – Oct 2024 | Arizona State University**
+
+Built feature-rich Tic-Tac-Toe game for Android in Mobile Computing course. Implemented Minimax algorithm with Alpha-Beta Pruning across three difficulty levels. Enabled real-time Bluetooth multiplayer with JSON-based communication. Stored historical game data locally and designed intuitive UI.
+
+**Tech:** Android, Kotlin, Minimax, Alpha-Beta Pruning, Bluetooth
+
+### 5. Context Monitoring App
+**Sep 2024 | Arizona State University**
+
+Developed context-aware Android health monitoring app. Implemented heart rate monitoring using camera/flash via CameraX library and respiratory rate tracking using accelerometer data. Created user feedback system with rating interface and local data storage using RealmDB.
+
+**Tech:** Kotlin, CameraX, RealmDB, Android Studio
+
+### 6. Optimizers in Deep Models
+**Aug 2023 – Dec 2023 | Shiv Nadar University**
+
+Conducted comprehensive experiments training Vision Transformers with diverse optimizers. Achieved 92.96% accuracy on CIFAR-10 and 71.26% on CIFAR-100 using ViT with AdamW. Explored optimizer configurations and their impact on ViT performance across image recognition tasks.
+
+**Tech:** Vision Transformers, TensorFlow, Python
+
+### 7. StockVision
+**Jan 2023 – May 2023 | Shiv Nadar University**
+
+Innovative web app for real-time stock analysis, precise historical trends, and AI-driven 7-day price forecasts for NASDAQ/NSE stocks. Developed full-stack solution empowering users with data-driven investment decisions. Integrated live stock prices using Yahoo Finance API and AI-driven sentiment analysis.
+
+**Tech:** Flask, React, Tailwind CSS, Python
+**GitHub:** [github.com/cmdsiraj/stock_vision](https://github.com/cmdsiraj/stock_vision)
+
+### 8. Tweet Search and Classification
+**Jan 2023 – May 2023 | Shiv Nadar University**
+
+Developed ML models using Logistic Regression and fine-tuned Multinomial Naive Bayes classifier for tweet classification (spam/ham). Implemented ranking system based on followers, likes, retweets, and post date.
+
+**Tech:** Python, NLP, Scikit-Learn, Logistic Regression
+**GitHub:** [github.com/iamsiddhu3007/Information-retrieval-project](https://github.com/iamsiddhu3007/Information-retrieval-project)
+
+### 9. Sokoban Solver
+**Aug 2022 – Nov 2022 | Shiv Nadar University**
+
+Developed and implemented advanced algorithms and heuristics for solving complex Sokoban puzzles. Optimized performance through informed search algorithms, heuristic design, and memory management.
+
+**Tech:** Python, Search Algorithms, Heuristics
+**GitHub:** [github.com/aaaa760/sokoban](https://github.com/aaaa760/sokoban)
+
+### 10. The Holiday Destination
+**Aug 2022 – Nov 2022 | Shiv Nadar University**
+
+Developed full-stack web application for travel company. Created responsive layout enabling users to explore and book vacation packages. Utilized PHP to retrieve data from MySQL database and display travel package information.
+
+**Tech:** HTML, Tailwind CSS, PHP, MySQL
+**GitHub:** [github.com/Hemanth-Boyapati/HolidayDestination](https://github.com/Hemanth-Boyapati/HolidayDestination)
+
+### 11. Library Management System
+**Aug 2021 – Nov 2021 | Shiv Nadar University**
+
+Designed and developed user-friendly library management system utilizing object-oriented programming concepts. Implemented features like user account creation, book borrowing functionality, and librarian record-keeping.
+
+**Tech:** Java, OOP
+**GitHub:** [github.com/iamsiddhu3007/Library-Management-System](https://github.com/iamsiddhu3007/Library-Management-System)
+
+---
+
+## 🏆 Certifications
+
+1. **Google Cloud Fundamentals: Core Infrastructure** - Google Cloud (Sep 2025)
+2. **Getting Started with Google Kubernetes Engine** - Google Cloud (Sep 2025)
+3. **Snowflake Hands On Essentials - Data Warehouse** - Snowflake (Sep 2024)
+4. **Career Essentials in GitHub Professional Certificate** - GitHub, Microsoft, LinkedIn (Apr 2024)
+5. **Python for Data Science, AI & Development** - IBM, Coursera (Aug 2023)
+6. **What is Data Science?** - IBM, Coursera (Aug 2023)
+7. **Databases and SQL for Data Science with Python** - IBM, Coursera (Aug 2023)
+8. **Introduction to Augmented Reality and ARCore** - Google AR & VR, Coursera (May 2023)
+9. **AWS Academy Graduate - AWS Academy Cloud Foundations** - Amazon Web Services (Apr 2023)
+10. **Architecting with Google Compute Engine** - Google Cloud (Apr 2021)
+
+---
+
+## 📊 Portfolio Statistics
+
+- **2** Internships
+- **11+** Projects Completed
+- **10** Certifications
+- **4.0** GPA at ASU
+- **40+** Courses Completed
+
+---
+
+# 📁 Repository Documentation
 
 ## 🚀 Tech Stack
 
@@ -127,248 +266,6 @@ iamsiddhu3007.github.io/
 
 ---
 
-## 🎨 Components Guide
-
-### Core Components
-
-#### 1. **Navbar.jsx**
-The main navigation component with responsive mobile menu.
-
-**Features:**
-- Glass morphism design with backdrop blur
-- Desktop: Horizontal navigation with active indicators
-- Mobile: Hamburger menu with slide-in drawer (< 768px)
-- Theme toggle (Dark/Light mode)
-- Smooth scroll effects
-
-**Key Props:** None (uses React Router's `useLocation`)
-
-**How to Update:**
-```jsx
-// Add a new navigation link
-const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/your-new-page', label: 'New Page' },  // Add here
-    // ...
-];
-```
-
-#### 2. **Card.jsx**
-Reusable glass card component with hover effects.
-
-**Props:**
-- `children` - Content to display
-- `delay` - Animation delay (default: 0)
-- `hover` - Enable hover effect (default: true)
-
-**Usage:**
-```jsx
-<Card delay={0.1} hover={true}>
-    <YourContent />
-</Card>
-```
-
-#### 3. **CustomCursor.jsx**
-Custom animated cursor for desktop users.
-
-**Features:**
-- Automatically disabled on mobile/tablet (≤ 1024px)
-- Detects touch devices
-- Cursor glow effect
-- Pointer state for interactive elements
-
-**How it Works:**
-- Returns `null` on touch devices
-- Updates position on `mousemove`
-- Changes size/style on hover over clickable elements
-
-#### 4. **FloatingButtons.jsx**
-Floating action buttons for quick navigation.
-
-**Features:**
-- Back to top button
-- Social media links
-- Smooth scroll behavior
-
----
-
-## 📄 Pages Guide
-
-### Home.jsx
-**Sections:**
-1. **Hero** - Name, title, description, profile image
-2. **Stats** - Animated counters (internships, projects, certifications, GPA)
-3. **Experience Overview** - 4 expertise cards (Mobile, Full-Stack, Data Engineering, AI/ML)
-4. **How I Work** - Soft skills showcase (Communication, Ownership, Quality)
-5. **Featured Projects** - Animated carousel of all projects
-6. **Currently** - Current SCAI Grader position
-7. **Recommendations** - Testimonials from colleagues
-8. **CTA** - Call to action for May 2026 roles
-
-**How to Update:**
-```jsx
-// Update hero description (Home.jsx line 77)
-<p className="hero-description">
-    Your new description here
-</p>
-
-// Add a new project to carousel (Home.jsx line 38)
-const projectsData = [
-    'Promptly', 'Your New Project', ...
-];
-```
-
-### About.jsx
-Displays technical skills organized by categories.
-
-**Skill Categories:**
-1. Programming (Python, Dart, C/C++, Java, Kotlin, SQL, JavaScript)
-2. Libraries & Frameworks (NumPy, Pandas, Scikit-learn, TensorFlow, Flask, React)
-3. Web & Databases (HTML, CSS, Node.js, MySQL, PostgreSQL, MongoDB, Snowflake)
-4. Cloud & DevOps (AWS services, CI/CD, Git)
-5. Tools & Platforms (Android Studio, Flutter, Postman, APIs, Jira, Advanced Excel)
-6. Methodologies (Agile, Waterfall)
-
-**How to Add a Skill:**
-```jsx
-{
-    title: "Your Category",
-    icon: <YourIcon />,
-    skills: [
-        { name: "Skill Name", icon: <SkillIcon />, tech: "css-class" },
-    ]
-}
-```
-
-### Experience.jsx
-Timeline of professional experiences.
-
-**Data Structure:**
-```jsx
-{
-    role: "Job Title",
-    company: "Company Name",
-    period: "Start – End",
-    location: "City, State/Country",
-    type: "Internship/Part-time/Full-time",
-    workMode: "Remote/On-site/Hybrid",
-    award: "Optional Award", // Optional
-    responsibilities: [
-        "Achievement 1",
-        "Achievement 2"
-    ],
-    skills: ["Skill1", "Skill2"]
-}
-```
-
-### Projects.jsx
-Showcase of 11 major projects with descriptions.
-
-**Project Fields:**
-- `title` - Project name
-- `period` - Development timeline
-- `tech` - Technologies used
-- `description` - Detailed description
-- `skills` - Key skills demonstrated
-- `university` - Institution (if academic)
-- `github` - GitHub link (optional)
-
-### Education.jsx
-Education timeline with courses by semester.
-
-**Institutions:**
-1. Arizona State University (MS CS)
-2. Shiv Nadar University (B.Tech CSE)
-
-**How to Add a Course:**
-```jsx
-// For ASU
-"Spring 2026": [
-    { code: "CSE XXX", name: "Course Name" }
-]
-
-// For SNU (by category)
-"Your Category": [
-    { code: "XXX101", name: "Course Name" }
-]
-```
-
-### Certifications.jsx
-List of professional certifications with issuers and dates.
-
-**How to Add:**
-```jsx
-{
-    title: "Certification Name",
-    issuer: "Issuing Organization",
-    date: "Month Year",
-    link: "https://credential-url" // Optional
-}
-```
-
-### Resume.jsx
-PDF resume viewer with download button.
-
-**How to Update Resume:**
-1. Replace `/src/assets/resume.pdf` with new PDF
-2. Keep filename as `resume.pdf` or update import in Resume.jsx
-
-### Contact.jsx
-Contact information and social links.
-
-**How to Update:**
-```jsx
-// Update email (Contact.jsx)
-<a href="mailto:your.email@example.com">your.email@example.com</a>
-
-// Update social links
-<a href="https://linkedin.com/in/your-profile" ...>
-<a href="https://github.com/your-username" ...>
-```
-
----
-
-## 🎨 Theming & Styling
-
-### CSS Variables (index.css)
-
-The site uses CSS custom properties for theming:
-
-**Light Mode:**
-```css
---bg-primary: radial-gradient(...)
---text-primary: #0f172a
---text-secondary: #475569
---accent: #0284c7
---accent-secondary: #a78bfa
---border: rgba(2, 132, 199, 0.15)
-```
-
-**Dark Mode:**
-```css
---bg-primary: radial-gradient(...)
---text-primary: #f8fafc
---text-secondary: #cbd5e1
---accent: #60a5fa
---accent-secondary: #a78bfa
---border: rgba(96, 165, 250, 0.15)
-```
-
-### Responsive Breakpoints
-
-```css
-/* Small phones */
-@media (max-width: 480px) { }
-
-/* Mobile */
-@media (max-width: 768px) { }
-
-/* Tablet */
-@media (max-width: 1024px) { }
-```
-
----
-
 ## 🛠️ Setup & Installation
 
 ### Prerequisites
@@ -432,6 +329,280 @@ npm run build
 
 ---
 
+## 🎨 Components Guide
+
+### Core Components
+
+#### 1. **Navbar.jsx**
+The main navigation component with responsive mobile menu.
+
+**Features:**
+- Glass morphism design with backdrop blur
+- Desktop: Horizontal navigation with active indicators
+- Mobile: Hamburger menu with slide-in drawer (< 768px)
+- Theme toggle (Dark/Light mode)
+- Smooth scroll effects
+
+**Key Props:** None (uses React Router's `useLocation`)
+
+**How to Update:**
+```jsx
+// Add a new navigation link in src/components/Navbar.jsx
+const navLinks = [
+    { path: '/', label: 'Home' },
+    { path: '/your-new-page', label: 'New Page' },  // Add here
+    // ...
+];
+```
+
+#### 2. **Card.jsx**
+Reusable glass card component with hover effects.
+
+**Props:**
+- `children` - Content to display
+- `delay` - Animation delay (default: 0)
+- `hover` - Enable hover effect (default: true)
+
+**Usage:**
+```jsx
+<Card delay={0.1} hover={true}>
+    <YourContent />
+</Card>
+```
+
+#### 3. **CustomCursor.jsx**
+Custom animated cursor for desktop users.
+
+**Features:**
+- Automatically disabled on mobile/tablet (≤ 1024px)
+- Detects touch devices
+- Cursor glow effect
+- Pointer state for interactive elements
+
+**How it Works:**
+- Returns `null` on touch devices
+- Updates position on `mousemove`
+- Changes size/style on hover over clickable elements
+
+#### 4. **FloatingButtons.jsx**
+Floating action buttons for quick navigation.
+
+**Features:**
+- Back to top button
+- Social media links
+- Smooth scroll behavior
+
+---
+
+## 📄 Pages Guide
+
+### Home.jsx
+**Sections:**
+1. **Hero** - Name, title, description, profile image
+2. **Stats** - Animated counters (internships, projects, certifications, GPA)
+3. **Experience Overview** - 4 expertise cards (Mobile, Full-Stack, Data Engineering, AI/ML)
+4. **How I Work** - Soft skills showcase (Communication, Ownership, Quality)
+5. **Featured Projects** - Animated carousel of all projects
+6. **Currently** - Current SCAI Grader position
+7. **Recommendations** - Testimonials from colleagues
+8. **CTA** - Call to action for May 2026 roles
+
+**How to Update:**
+```jsx
+// Update hero description (src/pages/Home.jsx line 77)
+<p className="hero-description">
+    Your new description here
+</p>
+
+// Add a new project to carousel (src/pages/Home.jsx line 38)
+const projectsData = [
+    'Promptly', 'Your New Project', ...
+];
+```
+
+### About.jsx
+Displays technical skills organized by categories.
+
+**Skill Categories:**
+1. Programming (Python, Dart, C/C++, Java, Kotlin, SQL, JavaScript)
+2. Libraries & Frameworks (NumPy, Pandas, Scikit-learn, TensorFlow, Flask, React)
+3. Web & Databases (HTML, CSS, Node.js, MySQL, PostgreSQL, MongoDB, Snowflake)
+4. Cloud & DevOps (AWS services, CI/CD, Git)
+5. Tools & Platforms (Android Studio, Flutter, Postman, APIs, Jira, Advanced Excel)
+6. Methodologies (Agile, Waterfall)
+
+**How to Add a Skill:**
+```jsx
+// In src/pages/About.jsx
+{
+    title: "Your Category",
+    icon: <YourIcon />,
+    skills: [
+        { name: "Skill Name", icon: <SkillIcon />, tech: "css-class" },
+    ]
+}
+```
+
+### Experience.jsx
+Timeline of professional experiences.
+
+**Data Structure:**
+```jsx
+// In src/pages/Experience.jsx
+{
+    role: "Job Title",
+    company: "Company Name",
+    period: "Start – End",
+    location: "City, State/Country",
+    type: "Internship/Part-time/Full-time",
+    workMode: "Remote/On-site/Hybrid",
+    award: "Optional Award", // Optional
+    responsibilities: [
+        "Achievement 1",
+        "Achievement 2"
+    ],
+    skills: ["Skill1", "Skill2"]
+}
+```
+
+### Projects.jsx
+Showcase of 11 major projects with descriptions.
+
+**Project Fields:**
+- `title` - Project name
+- `period` - Development timeline
+- `tech` - Technologies used
+- `description` - Detailed description
+- `skills` - Key skills demonstrated
+- `university` - Institution (if academic)
+- `github` - GitHub link (optional)
+
+**How to Add a Project:**
+```jsx
+// In src/pages/Projects.jsx
+const projects = [
+    {
+        title: "Project Name",
+        period: "Month Year – Month Year",
+        tech: "Tech Stack",
+        description: "Detailed description",
+        skills: ["Skill1", "Skill2"],
+        github: "https://github.com/...", // Optional
+        university: "Institution Name" // Optional
+    },
+    // ... existing projects
+];
+```
+
+### Education.jsx
+Education timeline with courses by semester.
+
+**Institutions:**
+1. Arizona State University (MS CS)
+2. Shiv Nadar University (B.Tech CSE)
+
+**How to Add a Course:**
+```jsx
+// For ASU (src/pages/Education.jsx)
+const asuCourses = {
+    "Your Semester": [
+        { code: "CSE XXX", name: "Course Name" }
+    ],
+    // ...
+};
+
+// For SNU (by category)
+const snuCourses = {
+    "Your Category": [
+        { code: "XXX101", name: "Course Name" }
+    ],
+    // ...
+};
+```
+
+### Certifications.jsx
+List of professional certifications with issuers and dates.
+
+**How to Add:**
+```jsx
+// In src/pages/Certifications.jsx
+const certifications = [
+    {
+        title: "Certification Name",
+        issuer: "Issuing Organization",
+        date: "Month Year",
+        link: "https://credential-url" // Optional
+    },
+    // ... existing certifications
+];
+```
+
+### Resume.jsx
+PDF resume viewer with download button.
+
+**How to Update Resume:**
+1. Replace `/src/assets/resume.pdf` with new PDF
+2. Keep filename as `resume.pdf` or update import in `src/pages/Resume.jsx`
+
+### Contact.jsx
+Contact information and social links.
+
+**How to Update:**
+```jsx
+// In src/pages/Contact.jsx
+// Update email
+<a href="mailto:your.email@example.com">your.email@example.com</a>
+
+// Update social links
+<a href="https://linkedin.com/in/your-profile" ...>
+<a href="https://github.com/your-username" ...>
+```
+
+---
+
+## 🎨 Theming & Styling
+
+### CSS Variables
+
+The site uses CSS custom properties for theming in `src/index.css`:
+
+**Light Mode:**
+```css
+--bg-primary: radial-gradient(...)
+--text-primary: #0f172a
+--text-secondary: #475569
+--accent: #0284c7
+--accent-secondary: #a78bfa
+--border: rgba(2, 132, 199, 0.15)
+--mobile-menu-bg: rgba(240, 249, 255, 0.98)
+```
+
+**Dark Mode:**
+```css
+--bg-primary: radial-gradient(...)
+--text-primary: #f8fafc
+--text-secondary: #cbd5e1
+--accent: #60a5fa
+--accent-secondary: #a78bfa
+--border: rgba(96, 165, 250, 0.15)
+--mobile-menu-bg: rgba(10, 10, 15, 0.98)
+```
+
+### Responsive Breakpoints
+
+```css
+/* Small phones */
+@media (max-width: 480px) { }
+
+/* Mobile */
+@media (max-width: 768px) { }
+
+/* Tablet */
+@media (max-width: 1024px) { }
+```
+
+---
+
 ## 📝 How to Update Content
 
 ### Update Personal Information
@@ -461,60 +632,6 @@ const experiences = [
         skills: ["Skill1", "Skill2"]
     },
     // ... existing experiences
-];
-```
-
-### Add New Project
-
-Edit `src/pages/Projects.jsx`:
-```jsx
-const projects = [
-    {
-        title: "Project Name",
-        period: "Month Year – Month Year",
-        tech: "Tech Stack",
-        description: "Detailed description",
-        skills: ["Skill1", "Skill2"],
-        github: "https://github.com/...", // Optional
-        university: "Institution Name" // Optional
-    },
-    // ... existing projects
-];
-```
-
-### Add New Course
-
-Edit `src/pages/Education.jsx`:
-```jsx
-// For ASU
-const asuCourses = {
-    "Your Semester": [
-        { code: "CSE XXX", name: "Course Name" }
-    ],
-    // ...
-};
-
-// For SNU
-const snuCourses = {
-    "Your Category": [
-        { code: "XXX101", name: "Course Name" }
-    ],
-    // ...
-};
-```
-
-### Add New Certification
-
-Edit `src/pages/Certifications.jsx`:
-```jsx
-const certifications = [
-    {
-        title: "Certification Name",
-        issuer: "Issuing Organization",
-        date: "Month Year",
-        link: "https://credential-url" // Optional
-    },
-    // ... existing certifications
 ];
 ```
 
@@ -554,29 +671,6 @@ const certifications = [
 
 ---
 
-## 🔧 Troubleshooting
-
-### Issue: Mobile menu not appearing
-**Solution:** Ensure screen width is < 768px. Check browser dev tools mobile view.
-
-### Issue: Custom cursor visible on mobile
-**Solution:** Already fixed with CSS media query and component logic. Clear cache if persisting.
-
-### Issue: Deployment fails
-**Solution:**
-```bash
-# Clean and rebuild
-rm -rf dist node_modules/.cache
-npm install
-npm run build
-npm run deploy
-```
-
-### Issue: Theme not persisting
-**Solution:** Check browser localStorage is enabled. Theme is saved in `localStorage.getItem('theme')`.
-
----
-
 ## 📚 Technologies & Libraries
 
 | Technology | Version | Purpose |
@@ -587,29 +681,6 @@ npm run deploy
 | React Router | 7.9.6 | Routing |
 | React Icons | 5.5.0 | Icon Library |
 | gh-pages | 6.3.0 | Deployment |
-
----
-
-## 📊 Statistics
-
-- **2** Internships
-- **11+** Projects Completed
-- **9+** Certifications
-- **4.0** GPA at ASU
-- **10** Certifications Listed
-- **40+** Courses Completed
-
----
-
-## 📞 Contact
-
-**Mohana Siddhartha Chivukula**
-
-- 📧 Email: mohanasiddhartha.chivukula@gmail.com
-- 🔗 LinkedIn: [linkedin.com/in/siddharthachivukula](https://linkedin.com/in/siddharthachivukula/)
-- 💻 GitHub: [github.com/iamsiddhu3007](https://github.com/iamsiddhu3007)
-- 🌐 Portfolio: [iamsiddhu3007.github.io](https://iamsiddhu3007.github.io)
-- 📍 Location: Tempe, AZ, USA
 
 ---
 
@@ -625,9 +696,3 @@ This project is open source and available for reference. Please do not copy cont
 - Icons from React Icons
 - Animations powered by Framer Motion
 - Hosted on GitHub Pages
-
----
-
-**Last Updated:** December 2024
-
-**Status:** Looking for full-time SWE roles starting May 2026
