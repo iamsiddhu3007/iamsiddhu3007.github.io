@@ -13,7 +13,7 @@ const asuCourses = {
         { code: "CSE 579", name: "Knowledge Representation" }
     ],
     "Summer 2025": [
-        { code: "CSE 584", name: "Internship - Curricular Practical Training" }
+        { code: "CSE 584", name: "Internship - Curricular Practical Training (Get SuperStars Inc.)" }
     ],
     "Fall 2025": [
         { code: "CSE 511", name: "Data Processing at Scale" },
@@ -89,8 +89,8 @@ const snuCourses = {
         { code: "SWE210", name: "Project Management: Planning, Execution, Evaluation and Control" }
     ],
     "Capstone Projects": [
-        { code: "CSD493", name: "Project-1" },
-        { code: "CSD494", name: "Project-2 / Internship" }
+        { code: "CSD493", name: "Project-1 (Optimizers)" },
+        { code: "CSD494", name: "Project-2 / Internship (ZS)" }
     ]
 };
 
