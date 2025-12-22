@@ -90,7 +90,7 @@ const snuCourses = {
     ],
     "Capstone Projects": [
         { code: "CSD493", name: "Project-1 (Optimizers in Deep Models)" },
-        { code: "CSD494", name: "Project-2 / Internship (ZS Associates)" }
+        { code: "CSD494", name: "Internship (ZS Associates)" }
     ]
 };
 
