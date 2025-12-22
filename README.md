@@ -169,16 +169,16 @@ Designed and developed user-friendly library management system utilizing object-
 
 ## 🏆 Certifications
 
-1. **Google Cloud Fundamentals: Core Infrastructure** - Google Cloud (Sep 2025)
-2. **Getting Started with Google Kubernetes Engine** - Google Cloud (Sep 2025)
-3. **Snowflake Hands On Essentials - Data Warehouse** - Snowflake (Sep 2024)
-4. **Career Essentials in GitHub Professional Certificate** - GitHub, Microsoft, LinkedIn (Apr 2024)
-5. **Python for Data Science, AI & Development** - IBM, Coursera (Aug 2023)
-6. **What is Data Science?** - IBM, Coursera (Aug 2023)
-7. **Databases and SQL for Data Science with Python** - IBM, Coursera (Aug 2023)
-8. **Introduction to Augmented Reality and ARCore** - Google AR & VR, Coursera (May 2023)
-9. **AWS Academy Graduate - AWS Academy Cloud Foundations** - Amazon Web Services (Apr 2023)
-10. **Architecting with Google Compute Engine** - Google Cloud (Apr 2021)
+1. **[Microsoft Azure AI Essentials](https://www.linkedin.com/learning/certificates/d99e7617be731ef17e007d63d00671bc07b406b884339980e15a25b79ce66099)** - Microsoft (Sep 2025)
+2. **[Docker Foundations Professional Certificate](https://www.linkedin.com/learning/certificates/87186bff9dc74ab2d328684167984eb878321ba2f0ed34535bd437a697fca073)** - Docker, Inc (Aug 2025)
+3. **[Goldman Sachs Software Engineering Job Simulation](https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/MBA4MnZTNFEoJZGnk/NPdeQ43o8P9HJmJzg_MBA4MnZTNFEoJZGnk_F3AzhPLHSypc9DodE_1738691881332_completion_certificate.pdf)** - Forage (Feb 2025)
+4. **[Tellius Advanced Insights & Predictive](https://www.linkedin.com/in/siddharthachivukula/details/certifications/1724801024742/single-media-viewer/?profileId=ACoAADP0W4cB52KY8_G87nFoj-ze3JIEOBWqP2I)** - Tellius (Feb 2024)
+5. **[ThoughtSpot Professional Certification](https://www.linkedin.com/in/siddharthachivukula/details/certifications/1724800805531/single-media-viewer/?profileId=ACoAADP0W4cB52KY8_G87nFoj-ze3JIEOBWqP2I)** - ThoughtSpot (Feb 2024)
+6. **[Blockchain Revolution Specialization](https://www.coursera.org/account/accomplishments/specialization/APBPRB9XY9HP?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n)** - Coursera (Sep 2022)
+7. **[Introduction to Android Mobile Application Development](https://www.coursera.org/account/accomplishments/specialization/APBPRB9XY9HP?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n)** - Meta (Coursera) (Sep 2022)
+8. **[Introduction to Quantum Computing](https://udemy-certificate.s3.amazonaws.com/image/UC-82826000-97d0-477f-9755-a61b781596db.jpg)** - Udemy (Sep 2022)
+9. **[Getting Started With Figma](https://www.coursera.org/account/accomplishments/verify/PEPRHG4H54YD?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=project)** - Coursera (Sep 2022)
+10. **[Big Data Integration and Processing](https://www.coursera.org/account/accomplishments/certificate/43MT2H3S6SDA)** - Coursera (Apr 2021)
 
 ---
 
