@@ -35,3 +35,11 @@
 .cursor-glow.pointer {
     opacity: 0.7;
 }
+
+/* Hide custom cursor on mobile/tablet */
+@media (max-width: 1024px) {
+    .custom-cursor,
+    .cursor-glow {
+        display: none !important;
+    }
+}
