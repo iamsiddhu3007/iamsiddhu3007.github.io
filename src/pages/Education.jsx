@@ -89,8 +89,8 @@ const snuCourses = {
         { code: "SWE210", name: "Project Management: Planning, Execution, Evaluation and Control" }
     ],
     "Capstone Projects": [
-        { code: "CSD493", name: "Project-1 (Optimizers)" },
-        { code: "CSD494", name: "Project-2 / Internship (ZS)" }
+        { code: "CSD493", name: "Project-1 (Optimizers in Deep Models)" },
+        { code: "CSD494", name: "Project-2 / Internship (ZS Associates)" }
     ]
 };
 
