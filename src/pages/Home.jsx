@@ -66,7 +66,7 @@ export default function Home() {
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.3, duration: 0.6 }}
                             >
-                                Software Developer & Data Engineer
+                                Software Developer
                             </motion.p>
                             <motion.p
                                 className="hero-description"
@@ -74,8 +74,7 @@ export default function Home() {
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.4, duration: 0.6 }}
                             >
-                                Graduate student at Arizona State University, building mobile apps, data pipelines, and clean CI/CD.
-                                Passionate about creating efficient, scalable solutions.
+                                Graduate student at Arizona State University with experience in building production-level mobile applications for Android and cross-platform environments, full-stack web applications, designing data pipelines and ETL solutions, and developing AI-powered systems with LLMs and machine learning. Passionate about building scalable solutions to complex problems through clean code and thoughtful architecture.
                             </motion.p>
                         </div>
                         <motion.div
@@ -157,7 +156,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* What I Do Section */}
+            {/* Experience Overview Section */}
             <section className="what-i-do-section">
                 <div className="container">
                     <motion.h2
@@ -166,23 +165,24 @@ export default function Home() {
                         viewport={{ once: true }}
                         className="section-title"
                     >
-                        What I Do
+                        Experience Overview
                     </motion.h2>
                     <div className="expertise-grid">
                         <Card delay={0.1}>
                             <div className="expertise-icon">📱</div>
                             <h3>Mobile Development</h3>
-                            <p>Building cross-platform mobile applications with Flutter/Dart and Android. Focus on clean architecture and smooth user experiences.</p>
+                            <p>Contributed to Flutter development at Get SuperStars Inc., delivering clean UI components and maintaining code review standards. Built Android apps at ASU including AI Tic-Tac-Toe with Minimax algorithm and a health monitoring app using camera/accelerometer sensors.</p>
                             <div className="tech-tags">
                                 <span>Flutter</span>
                                 <span>Dart</span>
                                 <span>Android</span>
+                                <span>Kotlin</span>
                             </div>
                         </Card>
                         <Card delay={0.2}>
                             <div className="expertise-icon">🌐</div>
                             <h3>Full-Stack Development</h3>
-                            <p>Creating responsive web applications with React frontends and robust backend APIs. Delivering end-to-end solutions.</p>
+                            <p>Built web applications like Promptly (LLM agent framework with RAG and vector-backed knowledge base) and StockVision (real-time stock analysis with AI-driven forecasting). Experience in developing responsive frontends with React and robust backend APIs with Flask.</p>
                             <div className="tech-tags">
                                 <span>React</span>
                                 <span>Flask</span>
@@ -192,7 +192,7 @@ export default function Home() {
                         <Card delay={0.3}>
                             <div className="expertise-icon">⚙️</div>
                             <h3>Data Engineering</h3>
-                            <p>Designing and implementing ETL pipelines, data warehouses, and cloud data solutions for large-scale analytics.</p>
+                            <p>Designed and optimized ETL pipelines, data warehouses, and cloud-based data solutions at ZS Associates. Worked extensively with Snowflake for data warehousing, Informatica for data integration, and SQL for complex data transformations. Experience in building scalable data architectures for large-scale analytics and business intelligence.</p>
                             <div className="tech-tags">
                                 <span>Snowflake</span>
                                 <span>Informatica</span>
@@ -202,12 +202,51 @@ export default function Home() {
                         <Card delay={0.4}>
                             <div className="expertise-icon">🤖</div>
                             <h3>AI/ML</h3>
-                            <p>Developing machine learning models, LLM applications, and intelligent systems for real-world problems.</p>
+                            <p>Built LLM-powered applications with RAG and vector databases (Promptly), customer churn prediction models using XGBoost and Random Forest, and researched optimizer performance in Vision Transformers achieving 92.96% accuracy on CIFAR-10.</p>
                             <div className="tech-tags">
                                 <span>Python</span>
                                 <span>LLMs</span>
                                 <span>TensorFlow</span>
                             </div>
+                        </Card>
+                    </div>
+                </div>
+            </section>
+
+            {/* How I Work Section */}
+            <section className="how-i-work-section">
+                <div className="container">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="section-title"
+                    >
+                        How I Work
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        className="section-subtitle"
+                    >
+                        Collaboration, ownership, and delivering quality solutions
+                    </motion.p>
+                    <div className="work-approach-grid">
+                        <Card delay={0.1}>
+                            <div className="approach-icon">💬</div>
+                            <h3>Clear Communication</h3>
+                            <p>Collaborated with stakeholders and cross-functional teams at ZS Associates to define clear deliverables. Maintained comprehensive documentation of business and technical requirements, ensuring alignment across teams.</p>
+                        </Card>
+                        <Card delay={0.2}>
+                            <div className="approach-icon">🎯</div>
+                            <h3>End-to-End Ownership</h3>
+                            <p>Consistently took full ownership of tasks from conception to delivery. Worked closely with testing teams to deliver high-quality solutions with minimal bugs, ensuring robust and reliable software.</p>
+                        </Card>
+                        <Card delay={0.3}>
+                            <div className="approach-icon">🚀</div>
+                            <h3>Process & Quality</h3>
+                            <p>Created onboarding guides for new developers and maintained CI/CD pipelines at Get SuperStars Inc. Established code review standards and best practices to maintain code quality and team efficiency.</p>
                         </Card>
                     </div>
                 </div>
@@ -282,8 +321,9 @@ export default function Home() {
                             </div>
                             <p className="exp-period">Aug 2025 – Present | Tempe, Arizona</p>
                             <p className="exp-description">
-                                Assisting Prof. Jaejong Baek in grading and managing coursework for CSE 469: Computer and Network Forensics
-                                and CSE 543: Information Assurance and Security.
+                                Assisting Prof. Jaejong Baek in grading and managing coursework.<br/>
+                                <strong>Fall 2025:</strong> CSE 469 (Computer and Network Forensics) and CSE 543 (Information Assurance and Security)<br/>
+                                <strong>Spring 2026:</strong> CSE 535 (Mobile Computing), CSE 543 (Information Assurance and Security), and CSE 469 (Computer and Network Forensics)
                             </p>
                             <Link
                                 to="/experience"
@@ -388,7 +428,7 @@ export default function Home() {
                     <Card delay={0.1} hover={false}>
                         <div className="cta-content">
                             <h2>Let's Work Together</h2>
-                            <p>I'm currently looking for new opportunities. Let's connect and build something amazing!</p>
+                            <p>Looking for full-time SWE roles starting May 2026. Let's connect and build something amazing!</p>
                             <div className="cta-buttons">
                                 <motion.a
                                     href="/contact"

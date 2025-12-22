@@ -10,7 +10,9 @@ const experiences = [
         type: "Part-time",
         workMode: "Hybrid",
         responsibilities: [
-            "Assisting Prof. Jaejong Baek in grading and managing coursework for CSE 469: Computer and Network Forensics and CSE 543: Information Assurance and Security"
+            "Assisting Prof. Jaejong Baek in grading and managing coursework",
+            "Fall 2025: CSE 469 (Computer and Network Forensics) and CSE 543 (Information Assurance and Security)",
+            "Spring 2026: CSE 535 (Mobile Computing), CSE 543 (Information Assurance and Security), and CSE 469 (Computer and Network Forensics)"
         ],
         skills: ["Security", "Forensics", "Academic Support"]
     },
