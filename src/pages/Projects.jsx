@@ -4,10 +4,19 @@ import './Projects.css';
 const projects = [
     {
         name: "Promptly",
-        tech: "React, Python, LLM APIs (Gemini, Groq), Ollama",
-        period: "May 2025 – Jul 2025",
-        desc: "Designed a modular LLM agent framework with pluggable APIs, tool chaining, and a role-based system prompt. Implemented a vector-backed knowledge base enabling multi-step learning, multi-shot execution, and contextual memory. Led the development of a web application and included a tool where the agent can create a downloadable pdf.",
-        skills: ["React", "Python", "LLMs", "RAG"]
+        tech: "React, Next.js, TypeScript, Prisma, PostgreSQL, AWS Amplify, AWS RDS, AWS Bedrock, pgvector, CI/CD",
+        period: "December 2025 - Present",
+        desc: "Promptly is a full-stack multi-model AI comparison platform built with Next.js, TypeScript, Prisma, PostgreSQL, AWS Amplify, AWS RDS, and AWS Bedrock. The platform allows users to submit a single prompt and query 14 large language models across 4 providers including OpenAI, Google Gemini, Anthropic, and Amazon Bedrock simultaneously. Responses stream back in real time using server-sent events, and an AI Agent generates a post-run synthesis classifying model outputs by agreement, disagreement, and confidence score. The platform supports guest access and authenticated access via Google OAuth, with quota tracking backed by PostgreSQL. It also features a RAG pipeline for document-based context querying using pgvector, JSON and Markdown export, and is deployed on AWS Amplify with CI/CD from GitHub.",
+        skills: ["React", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "AWS"],
+        link: "https://main.dpfko9sz2ylyy.amplifyapp.com/"
+    },
+    {
+        name: "STREAM: Scalable Real-Time Event and Analytics Machine",
+        tech: "Python, Apache Kafka, Kubernetes, Neo4j, Docker, Helm, Zookeeper",
+        period: "October 2025 - November 2025",
+        desc: "STREAM is a real-time distributed data streaming pipeline built with Python, Apache Kafka, Kubernetes, Neo4j, and Docker. The system ingests NYC Taxi trip data through a Kafka producer, streams it through a Kafka Connect integration into a Neo4j graph database, and enables graph analytics across 1,530 relationships and 42 location nodes. The pipeline is orchestrated on a Kubernetes cluster using Minikube, with Kafka, Zookeeper, and Neo4j deployed as containerized services using Helm charts and YAML configurations. The project implements PageRank and Breadth First Search graph algorithms using the Neo4j Graph Data Science library to analyze transportation network patterns and identify high-traffic locations.",
+        skills: ["Python", "Apache Kafka", "Kubernetes", "Neo4j", "Docker"],
+        university: "Arizona State University"
     },
     {
         name: "Attrition Prediction Using Machine Learning",
@@ -26,11 +35,11 @@ const projects = [
         university: "Arizona State University"
     },
     {
-        name: "AI-Powered Multiplayer Tic-Tac-Toe Mobile Game",
-        tech: "Android, Kotlin, Minimax, Alpha-Beta Pruning, Bluetooth",
-        period: "Sep 2024 – Oct 2024",
-        desc: "Built feature-rich Tic-Tac-Toe game for Android in Mobile Computing course. Implemented Minimax algorithm with Alpha-Beta Pruning across three difficulty levels (Easy, Medium, Hard). Enabled real-time Bluetooth multiplayer with JSON-based communication. Stored historical game data locally and designed intuitive UI for single-player and multiplayer modes.",
-        skills: ["Android", "Kotlin", "AI Algorithms", "Bluetooth"],
+        name: "AI Game Engine",
+        tech: "Kotlin, Android, Minimax, Alpha-Beta Pruning, Bluetooth, JSON",
+        period: "September 2024 - October 2024",
+        desc: "An Android Tic-Tac-Toe game built in Kotlin featuring an AI opponent powered by the Minimax algorithm with Alpha-Beta Pruning optimization. The AI operates across 3 difficulty levels, from random moves at Easy to optimal unbeatable play at Hard, with Alpha-Beta Pruning reducing computational overhead by eliminating irrelevant branches of the game tree. The application supports three gameplay modes including single-player against the AI, local multiplayer on the same device, and real-time Bluetooth multiplayer across two devices using JSON-based game state synchronization. Game history including results, difficulty levels, and timestamps is stored locally on the device for future reference.",
+        skills: ["Kotlin", "Android", "Minimax", "Alpha-Beta Pruning", "Bluetooth"],
         university: "Arizona State University"
     },
     {
@@ -43,10 +52,10 @@ const projects = [
     },
     {
         name: "Optimizers in Deep Models",
-        tech: "Vision Transformers, TensorFlow, Python",
-        period: "Aug 2023 – Dec 2023",
-        desc: "Conducted comprehensive experiments training Vision Transformers with diverse optimizers (Adam, AdamW, Adabelief, Adagrad, Adadelta, Radam, SGD). Achieved 92.96% accuracy on CIFAR-10 and 71.26% on CIFAR-100 using ViT with AdamW. Explored optimizer configurations and their impact on ViT performance across image recognition tasks.",
-        skills: ["Deep Learning", "Computer Vision", "TensorFlow"],
+        tech: "Python, TensorFlow, Vision Transformers, CIFAR-10, CIFAR-100",
+        period: "August 2023 - December 2023",
+        desc: "A research project conducted at Shiv Nadar University investigating the impact of various optimizers on Vision Transformer and Pooling-based Vision Transformer architectures trained on CIFAR-10 and CIFAR-100 image classification datasets. The study evaluated 7 optimizers including Adam, AdamW, Adabelief, Radam, Adagrad, Adadelta, and SGD, measuring performance based on convergence speed, stability, and classification accuracy. AdamW with decoupled weight decay achieved the highest accuracy of 92.96% on CIFAR-10 and 71.26% on CIFAR-100. Further experimentation with decoupled weight decay applied to AdaBelief improved its accuracy to 74.85%, making it competitive with AdamW. Data augmentation techniques including flipping, rotation, and brightness adjustment were applied to CIFAR-100, increasing AdamW accuracy from 68.92% to 73.81% and demonstrating significant improvements in model generalization.",
+        skills: ["Python", "TensorFlow", "Vision Transformers", "Deep Learning"],
         university: "Shiv Nadar University"
     },
     {

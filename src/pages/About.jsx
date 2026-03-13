@@ -95,8 +95,7 @@ export default function About() {
         >
             <h1>About Me</h1>
             <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '900px', lineHeight: '1.8' }}>
-                I'm a graduate student at Arizona State University pursuing a Master's in Computer Science.
-                I build mobile apps, data pipelines, and clean CI/CD systems. Passionate about creating efficient, scalable solutions.
+                Master's student in Computer Science at Arizona State University graduating May 2026, with hands-on experience across distributed systems, mobile development, and AI infrastructure. I have built and shipped production systems at scale, from real-time streaming pipelines processing millions of records to multi-model AI platforms querying 14 LLMs in parallel. My work spans backend engineering, mobile applications, and machine learning, with a focus on building systems that are performant, scalable, and solve real problems. Currently seeking full-time Software Engineer roles starting June 2026.
             </p>
 
             <h2>Technical Skills</h2>
