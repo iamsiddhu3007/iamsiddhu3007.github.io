@@ -1,6 +1,14 @@
+/* Apple-style Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
 .home-page {
     padding-top: 80px;
     position: relative;
+    /* Enable GPU acceleration for smooth animations */
+    will-change: scroll-position;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Hero Section */

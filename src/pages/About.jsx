@@ -1,89 +1,7 @@
 import { motion } from 'framer-motion';
-import Card from '../components/Card';
 import './About.css';
-import {
-    SiPython, SiDart, SiCplusplus, SiKotlin, SiMysql, SiJavascript,
-    SiNumpy, SiPandas, SiScikitlearn, SiTensorflow, SiFlask, SiReact,
-    SiHtml5, SiCss3, SiNodedotjs, SiPostgresql, SiMongodb, SiSnowflake,
-    SiGit, SiAndroidstudio, SiFlutter, SiPostman, SiGraphql, SiJira
-} from 'react-icons/si';
-import { FaCode, FaDatabase, FaCloud, FaTasks, FaTools, FaJava, FaAws, FaFileExcel } from 'react-icons/fa';
-import { MdCode } from 'react-icons/md';
 
 export default function About() {
-    const skillCategories = [
-        {
-            title: "Programming",
-            icon: <FaCode />,
-            skills: [
-                { name: "Python", icon: <SiPython />, tech: "python" },
-                { name: "Dart", icon: <SiDart />, tech: "dart" },
-                { name: "C/C++", icon: <SiCplusplus />, tech: "cpp" },
-                { name: "Java", icon: <FaJava />, tech: "java" },
-                { name: "Kotlin", icon: <SiKotlin />, tech: "kotlin" },
-                { name: "SQL", icon: <SiMysql />, tech: "mysql" },
-                { name: "JavaScript", icon: <SiJavascript />, tech: "javascript" },
-            ]
-        },
-        {
-            title: "Libraries & Frameworks",
-            icon: <MdCode />,
-            skills: [
-                { name: "NumPy", icon: <SiNumpy />, tech: "numpy" },
-                { name: "Pandas", icon: <SiPandas />, tech: "pandas" },
-                { name: "Scikit-learn", icon: <SiScikitlearn />, tech: "scikit" },
-                { name: "TensorFlow", icon: <SiTensorflow />, tech: "tensorflow" },
-                { name: "Flask", icon: <SiFlask />, tech: "flask" },
-                { name: "React", icon: <SiReact />, tech: "react" },
-            ]
-        },
-        {
-            title: "Web & Databases",
-            icon: <FaDatabase />,
-            skills: [
-                { name: "HTML", icon: <SiHtml5 />, tech: "html5" },
-                { name: "CSS", icon: <SiCss3 />, tech: "css3" },
-                { name: "Node.js", icon: <SiNodedotjs />, tech: "nodejs" },
-                { name: "MySQL", icon: <SiMysql />, tech: "mysql" },
-                { name: "PostgreSQL", icon: <SiPostgresql />, tech: "postgresql" },
-                { name: "MongoDB", icon: <SiMongodb />, tech: "mongodb" },
-                { name: "Snowflake", icon: <SiSnowflake />, tech: "snowflake" },
-            ]
-        },
-        {
-            title: "Cloud & DevOps",
-            icon: <FaCloud />,
-            skills: [
-                { name: "AWS S3", icon: <FaAws />, tech: "aws" },
-                { name: "AWS IAM", icon: <FaAws />, tech: "aws" },
-                { name: "AWS Redshift", icon: <FaAws />, tech: "aws" },
-                { name: "AWS EC2", icon: <FaAws />, tech: "aws" },
-                { name: "CI/CD", icon: <SiGit />, tech: "git" },
-                { name: "Git", icon: <SiGit />, tech: "git" },
-            ]
-        },
-        {
-            title: "Tools & Platforms",
-            icon: <FaTools />,
-            skills: [
-                { name: "Android Studio", icon: <SiAndroidstudio />, tech: "android" },
-                { name: "Flutter", icon: <SiFlutter />, tech: "flutter" },
-                { name: "Postman", icon: <SiPostman />, tech: "postman" },
-                { name: "RESTful APIs", icon: <FaCode />, tech: "default" },
-                { name: "GraphQL", icon: <SiGraphql />, tech: "graphql" },
-                { name: "Jira", icon: <SiJira />, tech: "jira" },
-                { name: "Advanced Excel", icon: <FaFileExcel />, tech: "excel" },
-            ]
-        },
-        {
-            title: "Methodologies",
-            icon: <FaTasks />,
-            skills: [
-                { name: "Agile", icon: <FaTasks />, tech: "default" },
-                { name: "Waterfall", icon: <FaTasks />, tech: "default" },
-            ]
-        }
-    ];
 
     return (
         <motion.div
@@ -91,45 +9,85 @@ export default function About() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="container about-page"
-            style={{ paddingTop: '120px', minHeight: '100vh', paddingBottom: '3rem' }}
+            style={{ paddingTop: '100px', minHeight: '100vh', paddingBottom: '3rem' }}
         >
-            <h1>About Me</h1>
-            <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '900px', lineHeight: '1.8' }}>
-                Master's student in Computer Science at Arizona State University graduating May 2026, with hands-on experience across distributed systems, mobile development, and AI infrastructure. I have built and shipped production systems at scale, from real-time streaming pipelines processing millions of records to multi-model AI platforms querying 14 LLMs in parallel. My work spans backend engineering, mobile applications, and machine learning, with a focus on building systems that are performant, scalable, and solve real problems. Currently seeking full-time Software Engineer roles starting June 2026.
-            </p>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            >
+                <h1 style={{ fontSize: 'clamp(40px, 6vw, 72px)', marginBottom: '1.5rem' }}>
+                    Software engineer building intelligent, secure, and scalable systems.
+                </h1>
+                <p style={{ fontSize: '19px', color: 'var(--text-secondary)', marginBottom: '4rem', maxWidth: '680px', lineHeight: '1.55' }}>
+                    MS Computer Science @ Arizona State University graduating May 2026, with hands-on experience across distributed systems, mobile development, and AI infrastructure. I have built and shipped production systems at scale, from real-time streaming pipelines processing millions of records to multi-model AI platforms querying 14 LLMs in parallel. My work spans backend engineering, mobile applications, and machine learning, with a focus on building systems that are performant, scalable, and solve real problems. Currently seeking full-time Software Engineer roles starting June 2026.
+                </p>
+            </motion.div>
 
-            <h2>Technical Skills</h2>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 48px)', marginTop: '3rem', marginBottom: '2rem', color: 'var(--text-primary)' }}>
+                Open Source Contributions
+            </h2>
 
-            <div className="skills-container">
-                {skillCategories.map((category, catIdx) => (
-                    <motion.div
-                        key={category.title}
-                        className="skill-category-section"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: catIdx * 0.1 }}
-                    >
-                        <div className="category-header-new">
-                            <span className="category-icon-new">{category.icon}</span>
-                            <h3 className="category-title-new">{category.title}</h3>
-                        </div>
-                        <div className="skills-list">
-                            {category.skills.map((skill) => (
-                                <motion.div
-                                    key={skill.name}
-                                    className="skill-badge"
-                                    whileHover={{ scale: 1.08, y: -3 }}
-                                    whileTap={{ scale: 0.98 }}
-                                >
-                                    <span className="skill-badge-icon" data-tech={skill.tech}>{skill.icon}</span>
-                                    <span className="skill-badge-name">{skill.name}</span>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </motion.div>
-                ))}
-            </div>
+            <motion.div
+                className="glass"
+                style={{ padding: '2rem', marginBottom: '3rem' }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            >
+                <h3 style={{ fontSize: '24px', marginBottom: '1rem', color: 'var(--accent-ocean)' }}>
+                    LiteLLM - Pricing Entry for Gemini 3.1 Flash Lite
+                </h3>
+                <div style={{ marginBottom: '1rem' }}>
+                    <span style={{
+                        display: 'inline-block',
+                        padding: '4px 12px',
+                        borderRadius: '999px',
+                        background: 'rgba(34, 197, 94, 0.15)',
+                        color: '#16a34a',
+                        fontSize: '13px',
+                        fontWeight: '600',
+                        marginRight: '0.5rem'
+                    }}>
+                        ✓ MERGED
+                    </span>
+                    <span style={{ color: 'var(--text-tertiary)', fontSize: '14px' }}>April 15, 2026</span>
+                </div>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '1rem' }}>
+                    Added pricing configuration for Gemini 3.1 Flash Lite Preview model via OpenRouter, including complete model specifications and regression testing. Enabled accurate cost calculation for LLM routing operations.
+                </p>
+                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+                    {['Python', 'pytest', 'LiteLLM', 'API Integration'].map((tech) => (
+                        <span key={tech} style={{
+                            padding: '6px 11px',
+                            borderRadius: '999px',
+                            fontSize: '13px',
+                            color: 'var(--text-secondary)',
+                            background: 'rgba(255, 255, 255, 0.54)',
+                            border: '1px solid var(--border-soft)'
+                        }}>
+                            {tech}
+                        </span>
+                    ))}
+                </div>
+                <a
+                    href="https://github.com/BerriAI/litellm/pull/25610"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                        color: 'var(--accent-ocean)',
+                        fontSize: '14px',
+                        fontWeight: '500',
+                        textDecoration: 'none',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.5rem'
+                    }}
+                >
+                    View Pull Request →
+                </a>
+            </motion.div>
         </motion.div>
     );
 }

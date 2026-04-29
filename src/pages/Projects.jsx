@@ -1,5 +1,14 @@
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './Projects.css';
+
+// Helper function to create URL-friendly slugs from project names
+const createSlug = (name) => {
+    return name.toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)/g, '');
+};
 
 const projects = [
     {
@@ -106,6 +115,23 @@ const projects = [
 ];
 
 export default function Projects() {
+    const location = useLocation();
+
+    // Scroll to project if hash is present
+    useEffect(() => {
+        if (location.hash) {
+            const id = location.hash.replace('#', '');
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Add a highlight effect
+                    element.style.animation = 'highlight 2s ease';
+                }
+            }, 300);
+        }
+    }, [location]);
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -119,21 +145,23 @@ export default function Projects() {
             </p>
 
             <div className="timeline-container">
-                {projects.map((proj, idx) => (
-                    <motion.div
-                        key={idx}
-                        className="timeline-item"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: idx * 0.05 }}
-                    >
-                        <div className="timeline-marker">
-                            <div className="timeline-dot"></div>
-                            <div className="timeline-line"></div>
-                        </div>
+                {projects.map((proj, idx) => {
+                    const slug = createSlug(proj.name);
+                    return (
+                        <motion.div
+                            key={idx}
+                            className="timeline-item"
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.05 }}
+                        >
+                            <div className="timeline-marker">
+                                <div className="timeline-dot"></div>
+                                <div className="timeline-line"></div>
+                            </div>
 
-                        <div className="project-card">
+                            <div className="project-card" id={slug}>
                             <div className="project-header">
                                 <div className="project-title-group">
                                     <h3>{proj.name}</h3>
@@ -177,7 +205,8 @@ export default function Projects() {
                             )}
                         </div>
                     </motion.div>
-                ))}
+                    );
+                })}
             </div>
         </motion.div>
     );

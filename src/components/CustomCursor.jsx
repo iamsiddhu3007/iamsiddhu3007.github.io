@@ -27,7 +27,6 @@ export default function CustomCursor() {
     }, []);
 
     useEffect(() => {
-        // Check if it's a touch device
         const checkTouchDevice = () => {
             return ('ontouchstart' in window) ||
                    (navigator.maxTouchPoints > 0) ||
@@ -48,27 +47,17 @@ export default function CustomCursor() {
         };
     }, [updatePosition, updateCursorType]);
 
-    // Don't render custom cursor on touch devices
     if (isTouchDevice) {
         return null;
     }
 
     return (
-        <>
-            <div
-                className={`custom-cursor ${isPointer ? 'pointer' : ''}`}
-                style={{
-                    left: `${position.x}px`,
-                    top: `${position.y}px`,
-                }}
-            />
-            <div
-                className={`cursor-glow ${isPointer ? 'pointer' : ''}`}
-                style={{
-                    left: `${position.x}px`,
-                    top: `${position.y}px`,
-                }}
-            />
-        </>
+        <div
+            className={`custom-cursor ${isPointer ? 'pointer' : ''}`}
+            style={{
+                left: `${position.x}px`,
+                top: `${position.y}px`,
+            }}
+        />
     );
 }

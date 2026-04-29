@@ -4,15 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 
 export default function Navbar() {
-    const [theme, setTheme] = useState('dark');
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        setTheme(savedTheme);
-        document.body.className = `${savedTheme}-mode`;
+        document.body.className = 'light-mode';
     }, []);
 
     useEffect(() => {
@@ -40,20 +37,9 @@ export default function Navbar() {
         };
     }, [mobileMenuOpen]);
 
-    const toggleTheme = () => {
-        const newTheme = theme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-        document.body.className = `${newTheme}-mode`;
-    };
-
     const navLinks = [
-        { path: '/', label: 'Home' },
-        { path: '/about', label: 'About' },
-        { path: '/experience', label: 'Experience' },
+        { path: '/experience', label: 'Work' },
         { path: '/projects', label: 'Projects' },
-        { path: '/education', label: 'Education' },
-        { path: '/certifications', label: 'Certifications' },
         { path: '/resume', label: 'Resume' },
         { path: '/contact', label: 'Contact' }
     ];
@@ -62,18 +48,16 @@ export default function Navbar() {
         <>
             <motion.nav
                 className={`navbar ${scrolled ? 'scrolled' : ''}`}
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    duration: 0.7,
+                    ease: [0.22, 1, 0.36, 1]
+                }}
             >
             <div className="nav-content">
                 <Link to="/" className="nav-logo">
-                    <motion.span
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        SC
-                    </motion.span>
+                    Siddhartha
                 </Link>
 
                 {/* Desktop Navigation */}
@@ -84,34 +68,16 @@ export default function Navbar() {
                             to={link.path}
                             className={location.pathname === link.path ? 'active' : ''}
                         >
-                            <span>{link.label}</span>
-                            {location.pathname === link.path && (
-                                <motion.div
-                                    className="active-indicator"
-                                    layoutId="activeNav"
-                                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                                />
-                            )}
+                            {link.label}
                         </Link>
                     ))}
                 </div>
 
                 <div className="nav-actions">
-                    <motion.button
-                        onClick={toggleTheme}
-                        className="theme-toggle"
-                        whileHover={{ scale: 1.1, rotate: 180 }}
-                        whileTap={{ scale: 0.9 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        {theme === 'dark' ? '☀️' : '🌙'}
-                    </motion.button>
-
                     {/* Mobile Menu Button */}
-                    <motion.button
+                    <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                         className="mobile-menu-button"
-                        whileTap={{ scale: 0.9 }}
                         aria-label="Toggle menu"
                     >
                         <div className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}>
@@ -119,55 +85,46 @@ export default function Navbar() {
                             <span></span>
                             <span></span>
                         </div>
-                    </motion.button>
+                    </button>
                 </div>
             </div>
         </motion.nav>
 
-        {/* Mobile Menu Overlay - Outside navbar */}
+        {/* Mobile Menu - Outside navbar */}
         <AnimatePresence>
             {mobileMenuOpen && (
-                <>
-                    <motion.div
-                        className="mobile-menu-overlay"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={() => setMobileMenuOpen(false)}
-                    />
-                    <motion.div
-                        className="mobile-menu"
-                        initial={{ x: '100%' }}
-                        animate={{ x: 0 }}
-                        exit={{ x: '100%' }}
-                        transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-                    >
-                        <div className="mobile-menu-content">
-                            {navLinks.map((link, index) => (
-                                <motion.div
-                                    key={link.path}
-                                    initial={{ opacity: 0, x: 50 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: index * 0.05 }}
+                <motion.div
+                    className="mobile-menu"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                    onClick={() => setMobileMenuOpen(false)}
+                >
+                    <div className="mobile-menu-content">
+                        {navLinks.map((link, index) => (
+                            <motion.div
+                                key={link.path}
+                                initial={{ opacity: 0, y: 12 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 8 }}
+                                transition={{
+                                    delay: index * 0.05,
+                                    duration: 0.4,
+                                    ease: [0.22, 1, 0.36, 1]
+                                }}
+                            >
+                                <Link
+                                    to={link.path}
+                                    className={`mobile-nav-link ${location.pathname === link.path ? 'active' : ''}`}
+                                    onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    <Link
-                                        to={link.path}
-                                        className={`mobile-nav-link ${location.pathname === link.path ? 'active' : ''}`}
-                                        onClick={() => setMobileMenuOpen(false)}
-                                    >
-                                        {link.label}
-                                        {location.pathname === link.path && (
-                                            <motion.div
-                                                className="mobile-active-dot"
-                                                layoutId="activeMobile"
-                                            />
-                                        )}
-                                    </Link>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </motion.div>
-                </>
+                                    {link.label}
+                                </Link>
+                            </motion.div>
+                        ))}
+                    </div>
+                </motion.div>
             )}
         </AnimatePresence>
         </>

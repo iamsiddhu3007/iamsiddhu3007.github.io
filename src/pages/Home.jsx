@@ -1,46 +1,71 @@
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import profilePic from '../assets/profile.jpg';
 import Card from '../components/Card';
 import './Home.css';
 
-const Counter = ({ end, duration = 2, suffix = '' }) => {
-    const [count, setCount] = useState(0);
+// Apple-style scroll section component
+const ScrollSection = ({ children, className }) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start end", "end start"]
+    });
 
-    useEffect(() => {
-        if (!isInView) return;
+    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+    const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.95, 1, 1, 0.95]);
+    const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [40, 0, 0, -40]);
 
-        let startTime;
-        let animationFrame;
-
-        const animate = (currentTime) => {
-            if (!startTime) startTime = currentTime;
-            const progress = Math.min((currentTime - startTime) / (duration * 1000), 1);
-
-            setCount(Math.floor(progress * end));
-
-            if (progress < 1) {
-                animationFrame = requestAnimationFrame(animate);
-            }
-        };
-
-        animationFrame = requestAnimationFrame(animate);
-        return () => cancelAnimationFrame(animationFrame);
-    }, [isInView, end, duration]);
-
-    return <span ref={ref}>{count}{suffix}</span>;
+    return (
+        <motion.div
+            ref={ref}
+            style={{ opacity, scale, y }}
+            transition={{ type: "spring", stiffness: 100, damping: 30 }}
+            className={className}
+        >
+            {children}
+        </motion.div>
+    );
 };
 
 export default function Home() {
+    const [expandedCategory, setExpandedCategory] = useState(null);
+
     const projectsData = [
         'Promptly', 'Attrition Prediction', 'Blockchain Financial Security',
         'AI Tic-Tac-Toe', 'Context Monitoring App', 'Vision Transformers',
         'StockVision', 'Tweet Classification', 'Sokoban Solver',
         'Holiday Destination', 'Library Management'
     ];
+
+    // Projects mapped to categories with links to specific project sections
+    const projectsByCategory = {
+        'mobile': [
+            { name: 'AI Game Engine', slug: 'ai-game-engine' },
+            { name: 'Context Monitoring App', slug: 'context-monitoring-app' },
+        ],
+        'fullstack': [
+            { name: 'Promptly', slug: 'promptly' },
+            { name: 'StockVision', slug: 'stockvision' },
+            { name: 'The Holiday Destination', slug: 'the-holiday-destination' },
+            { name: 'Library Management System', slug: 'library-management-system' },
+        ],
+        'data': [
+            { name: 'STREAM: Real-Time Analytics', slug: 'stream-scalable-real-time-event-and-analytics-machine' },
+        ],
+        'ai': [
+            { name: 'Promptly (Multi-Model AI)', slug: 'promptly' },
+            { name: 'Attrition Prediction', slug: 'attrition-prediction-using-machine-learning' },
+            { name: 'Vision Transformers Research', slug: 'optimizers-in-deep-models' },
+            { name: 'Tweet Classification', slug: 'tweet-search-and-classification' },
+            { name: 'Sokoban Solver', slug: 'sokoban-solver' },
+        ],
+    };
+
+    const handleCategoryClick = (category) => {
+        setExpandedCategory(expandedCategory === category ? null : category);
+    };
 
     return (
         <div className="home-page">
@@ -76,6 +101,36 @@ export default function Home() {
                             >
                                 Graduate student at Arizona State University with experience in building production-level mobile applications for Android and cross-platform environments, full-stack web applications, designing data pipelines and ETL solutions, and developing AI-powered systems with LLMs and machine learning. Passionate about building scalable solutions to complex problems through clean code and thoughtful architecture.
                             </motion.p>
+                            <motion.a
+                                href="https://www.linkedin.com/in/siddharthachivukula/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                initial={{ y: 50, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.5, duration: 0.6 }}
+                                whileHover={{ scale: 1.05, y: -2 }}
+                                whileTap={{ scale: 0.95 }}
+                                style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '0.75rem',
+                                    padding: '1rem 2rem',
+                                    background: 'linear-gradient(135deg, #0077B6 0%, #48CAE4 100%)',
+                                    color: 'white',
+                                    borderRadius: '12px',
+                                    fontSize: '1rem',
+                                    fontWeight: '600',
+                                    textDecoration: 'none',
+                                    boxShadow: '0 4px 20px rgba(0, 119, 182, 0.3)',
+                                    marginTop: '1.5rem',
+                                    transition: 'all 0.3s ease'
+                                }}
+                            >
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                                Connect on LinkedIn
+                            </motion.a>
                         </div>
                         <motion.div
                             className="hero-image"
@@ -95,8 +150,8 @@ export default function Home() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.8, duration: 0.6 }}
                         onClick={() => {
-                            const statsSection = document.querySelector('.stats-section');
-                            statsSection?.scrollIntoView({ behavior: 'smooth' });
+                            const experienceSection = document.querySelector('.what-i-do-section');
+                            experienceSection?.scrollIntoView({ behavior: 'smooth' });
                         }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -118,46 +173,8 @@ export default function Home() {
                 </div>
             </motion.section>
 
-            {/* Stats Section */}
-            <section className="stats-section">
-                <div className="container">
-                    <div className="stats-grid">
-                        <Card delay={0.1} hover={false}>
-                            <div className="stat-item">
-                                <div className="stat-number">
-                                    <Counter end={2} />
-                                </div>
-                                <div className="stat-label">Internships</div>
-                            </div>
-                        </Card>
-                        <Card delay={0.2} hover={false}>
-                            <div className="stat-item">
-                                <div className="stat-number">
-                                    <Counter end={11} suffix="+" />
-                                </div>
-                                <div className="stat-label">Projects Completed</div>
-                            </div>
-                        </Card>
-                        <Card delay={0.3} hover={false}>
-                            <div className="stat-item">
-                                <div className="stat-number">
-                                    <Counter end={9} suffix="+" />
-                                </div>
-                                <div className="stat-label">Certifications</div>
-                            </div>
-                        </Card>
-                        <Card delay={0.4} hover={false}>
-                            <div className="stat-item">
-                                <div className="stat-number">4.0</div>
-                                <div className="stat-label">GPA at ASU</div>
-                            </div>
-                        </Card>
-                    </div>
-                </div>
-            </section>
-
             {/* Experience Overview Section */}
-            <section className="what-i-do-section">
+            <ScrollSection className="what-i-do-section">
                 <div className="container">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -167,54 +184,323 @@ export default function Home() {
                     >
                         Experience Overview
                     </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        className="section-subtitle"
+                        style={{ marginBottom: '2rem' }}
+                    >
+                        Click any category to explore related projects
+                    </motion.p>
                     <div className="expertise-grid">
-                        <Card delay={0.1}>
-                            <div className="expertise-icon">📱</div>
-                            <h3>Mobile Development</h3>
-                            <p>Contributed to Flutter development at Get SuperStars Inc., delivering clean UI components and maintaining code review standards. Built Android apps at ASU including AI Tic-Tac-Toe with Minimax algorithm and a health monitoring app using camera/accelerometer sensors.</p>
-                            <div className="tech-tags">
-                                <span>Flutter</span>
-                                <span>Dart</span>
-                                <span>Android</span>
-                                <span>Kotlin</span>
-                            </div>
-                        </Card>
-                        <Card delay={0.2}>
-                            <div className="expertise-icon">🌐</div>
-                            <h3>Full-Stack Development</h3>
-                            <p>Built web applications like Promptly (LLM agent framework with RAG and vector-backed knowledge base) and StockVision (real-time stock analysis with AI-driven forecasting). Experience in developing responsive frontends with React and robust backend APIs with Flask.</p>
-                            <div className="tech-tags">
-                                <span>React</span>
-                                <span>Flask</span>
-                                <span>REST APIs</span>
-                            </div>
-                        </Card>
-                        <Card delay={0.3}>
-                            <div className="expertise-icon">⚙️</div>
-                            <h3>Data Engineering</h3>
-                            <p>Designed and optimized ETL pipelines, data warehouses, and cloud-based data solutions at ZS Associates. Worked extensively with Snowflake for data warehousing, Informatica for data integration, and SQL for complex data transformations. Experience in building scalable data architectures for large-scale analytics and business intelligence.</p>
-                            <div className="tech-tags">
-                                <span>Snowflake</span>
-                                <span>Informatica</span>
-                                <span>SQL</span>
-                            </div>
-                        </Card>
-                        <Card delay={0.4}>
-                            <div className="expertise-icon">🤖</div>
-                            <h3>AI/ML</h3>
-                            <p>Built LLM-powered applications with RAG and vector databases (Promptly), customer churn prediction models using XGBoost and Random Forest, and researched optimizer performance in Vision Transformers achieving 92.96% accuracy on CIFAR-10.</p>
-                            <div className="tech-tags">
-                                <span>Python</span>
-                                <span>LLMs</span>
-                                <span>TensorFlow</span>
-                            </div>
-                        </Card>
+                        <motion.div
+                            layout
+                            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        >
+                            <motion.div
+                                layout
+                                onClick={() => handleCategoryClick('mobile')}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <Card delay={0.1}>
+                                    {!expandedCategory || expandedCategory !== 'mobile' ? (
+                                        <motion.div
+                                            initial={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <h3>Mobile Development</h3>
+                                            <p>Contributed to Flutter development at Get SuperStars Inc., delivering clean UI components and maintaining code review standards. Built Android apps at ASU including AI Tic-Tac-Toe with Minimax algorithm and a health monitoring app using camera/accelerometer sensors.</p>
+                                            <div className="tech-tags">
+                                                <span>Flutter</span>
+                                                <span>Dart</span>
+                                                <span>Android</span>
+                                                <span>Kotlin</span>
+                                            </div>
+                                        </motion.div>
+                                    ) : (
+                                        <motion.div
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ duration: 0.3, delay: 0.1 }}
+                                        >
+                                            <h3 style={{ marginBottom: '1.5rem' }}>Mobile Development Projects</h3>
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                                                {projectsByCategory.mobile.map((project, idx) => (
+                                                    <Link
+                                                        key={idx}
+                                                        to={`/projects#${project.slug}`}
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            window.scrollTo(0, 0);
+                                                        }}
+                                                        style={{ textDecoration: 'none' }}
+                                                    >
+                                                        <motion.div
+                                                            initial={{ opacity: 0, y: 10 }}
+                                                            animate={{ opacity: 1, y: 0 }}
+                                                            transition={{ delay: idx * 0.1 + 0.2, duration: 0.3 }}
+                                                            whileHover={{
+                                                                scale: 1.02,
+                                                                x: 4
+                                                            }}
+                                                            style={{
+                                                                padding: '1.25rem 1.5rem',
+                                                                background: 'rgba(255, 255, 255, 0.6)',
+                                                                backdropFilter: 'blur(10px)',
+                                                                border: '1px solid var(--border-soft)',
+                                                                borderRadius: '12px',
+                                                                display: 'flex',
+                                                                alignItems: 'center',
+                                                                justifyContent: 'space-between',
+                                                                transition: 'all 0.2s ease'
+                                                            }}
+                                                        >
+                                                            <span style={{ fontSize: '15px', fontWeight: '600', color: 'var(--text-primary)' }}>
+                                                                {project.name}
+                                                            </span>
+                                                            <span style={{ color: 'var(--accent-ocean)', fontSize: '14px', fontWeight: '600' }}>View</span>
+                                                        </motion.div>
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </Card>
+                            </motion.div>
+                        </motion.div>
+                        <motion.div
+                            layout
+                            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        >
+                            <motion.div
+                                layout
+                                onClick={() => handleCategoryClick('fullstack')}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <Card delay={0.2}>
+                                    {!expandedCategory || expandedCategory !== 'fullstack' ? (
+                                        <motion.div
+                                            initial={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <h3>Full-Stack Development</h3>
+                                            <p>Built web applications like Promptly (LLM agent framework with RAG and vector-backed knowledge base) and StockVision (real-time stock analysis with AI-driven forecasting). Experience in developing responsive frontends with React and robust backend APIs with Flask.</p>
+                                            <div className="tech-tags">
+                                                <span>React</span>
+                                                <span>Flask</span>
+                                                <span>REST APIs</span>
+                                            </div>
+                                        </motion.div>
+                                    ) : (
+                                        <motion.div
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ duration: 0.3, delay: 0.1 }}
+                                        >
+                                            <h3 style={{ marginBottom: '1.5rem' }}>Full-Stack Projects</h3>
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                                                {projectsByCategory.fullstack.map((project, idx) => (
+                                                    <Link
+                                                        key={idx}
+                                                        to={`/projects#${project.slug}`}
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            window.scrollTo(0, 0);
+                                                        }}
+                                                        style={{ textDecoration: 'none' }}
+                                                    >
+                                                        <motion.div
+                                                            initial={{ opacity: 0, y: 10 }}
+                                                            animate={{ opacity: 1, y: 0 }}
+                                                            transition={{ delay: idx * 0.1 + 0.2, duration: 0.3 }}
+                                                            whileHover={{
+                                                                scale: 1.02,
+                                                                x: 4
+                                                            }}
+                                                            style={{
+                                                                padding: '1.25rem 1.5rem',
+                                                                background: 'rgba(255, 255, 255, 0.6)',
+                                                                backdropFilter: 'blur(10px)',
+                                                                border: '1px solid var(--border-soft)',
+                                                                borderRadius: '12px',
+                                                                display: 'flex',
+                                                                alignItems: 'center',
+                                                                justifyContent: 'space-between',
+                                                                transition: 'all 0.2s ease'
+                                                            }}
+                                                        >
+                                                            <span style={{ fontSize: '15px', fontWeight: '600', color: 'var(--text-primary)' }}>
+                                                                {project.name}
+                                                            </span>
+                                                            <span style={{ color: 'var(--accent-ocean)', fontSize: '14px', fontWeight: '600' }}>View</span>
+                                                        </motion.div>
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </Card>
+                            </motion.div>
+                        </motion.div>
+                        <motion.div
+                            layout
+                            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        >
+                            <motion.div
+                                layout
+                                onClick={() => handleCategoryClick('data')}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <Card delay={0.3}>
+                                    {!expandedCategory || expandedCategory !== 'data' ? (
+                                        <motion.div
+                                            initial={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <h3>Data Engineering</h3>
+                                            <p>Designed and optimized ETL pipelines, data warehouses, and cloud-based data solutions at ZS Associates. Worked extensively with Snowflake for data warehousing, Informatica for data integration, and SQL for complex data transformations. Experience in building scalable data architectures for large-scale analytics and business intelligence.</p>
+                                            <div className="tech-tags">
+                                                <span>Snowflake</span>
+                                                <span>Informatica</span>
+                                                <span>SQL</span>
+                                            </div>
+                                        </motion.div>
+                                    ) : (
+                                        <motion.div
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ duration: 0.3, delay: 0.1 }}
+                                        >
+                                            <h3 style={{ marginBottom: '1.5rem' }}>Data Engineering Projects</h3>
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                                                {projectsByCategory.data.map((project, idx) => (
+                                                    <Link
+                                                        key={idx}
+                                                        to={`/projects#${project.slug}`}
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            window.scrollTo(0, 0);
+                                                        }}
+                                                        style={{ textDecoration: 'none' }}
+                                                    >
+                                                        <motion.div
+                                                            initial={{ opacity: 0, y: 10 }}
+                                                            animate={{ opacity: 1, y: 0 }}
+                                                            transition={{ delay: idx * 0.1 + 0.2, duration: 0.3 }}
+                                                            whileHover={{
+                                                                scale: 1.02,
+                                                                x: 4
+                                                            }}
+                                                            style={{
+                                                                padding: '1.25rem 1.5rem',
+                                                                background: 'rgba(255, 255, 255, 0.6)',
+                                                                backdropFilter: 'blur(10px)',
+                                                                border: '1px solid var(--border-soft)',
+                                                                borderRadius: '12px',
+                                                                display: 'flex',
+                                                                alignItems: 'center',
+                                                                justifyContent: 'space-between',
+                                                                transition: 'all 0.2s ease'
+                                                            }}
+                                                        >
+                                                            <span style={{ fontSize: '15px', fontWeight: '600', color: 'var(--text-primary)' }}>
+                                                                {project.name}
+                                                            </span>
+                                                            <span style={{ color: 'var(--accent-ocean)', fontSize: '14px', fontWeight: '600' }}>View</span>
+                                                        </motion.div>
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </Card>
+                            </motion.div>
+                        </motion.div>
+                        <motion.div
+                            layout
+                            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        >
+                            <motion.div
+                                layout
+                                onClick={() => handleCategoryClick('ai')}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <Card delay={0.4}>
+                                    {!expandedCategory || expandedCategory !== 'ai' ? (
+                                        <motion.div
+                                            initial={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <h3>AI/ML</h3>
+                                            <p>Built LLM-powered applications with RAG and vector databases (Promptly), customer churn prediction models using XGBoost and Random Forest, and researched optimizer performance in Vision Transformers achieving 92.96% accuracy on CIFAR-10.</p>
+                                            <div className="tech-tags">
+                                                <span>Python</span>
+                                                <span>LLMs</span>
+                                                <span>TensorFlow</span>
+                                            </div>
+                                        </motion.div>
+                                    ) : (
+                                        <motion.div
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ duration: 0.3, delay: 0.1 }}
+                                        >
+                                            <h3 style={{ marginBottom: '1.5rem' }}>AI/ML Projects</h3>
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                                                {projectsByCategory.ai.map((project, idx) => (
+                                                    <Link
+                                                        key={idx}
+                                                        to={`/projects#${project.slug}`}
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            window.scrollTo(0, 0);
+                                                        }}
+                                                        style={{ textDecoration: 'none' }}
+                                                    >
+                                                        <motion.div
+                                                            initial={{ opacity: 0, y: 10 }}
+                                                            animate={{ opacity: 1, y: 0 }}
+                                                            transition={{ delay: idx * 0.1 + 0.2, duration: 0.3 }}
+                                                            whileHover={{
+                                                                scale: 1.02,
+                                                                x: 4
+                                                            }}
+                                                            style={{
+                                                                padding: '1.25rem 1.5rem',
+                                                                background: 'rgba(255, 255, 255, 0.6)',
+                                                                backdropFilter: 'blur(10px)',
+                                                                border: '1px solid var(--border-soft)',
+                                                                borderRadius: '12px',
+                                                                display: 'flex',
+                                                                alignItems: 'center',
+                                                                justifyContent: 'space-between',
+                                                                transition: 'all 0.2s ease'
+                                                            }}
+                                                        >
+                                                            <span style={{ fontSize: '15px', fontWeight: '600', color: 'var(--text-primary)' }}>
+                                                                {project.name}
+                                                            </span>
+                                                            <span style={{ color: 'var(--accent-ocean)', fontSize: '14px', fontWeight: '600' }}>View</span>
+                                                        </motion.div>
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </Card>
+                            </motion.div>
+                        </motion.div>
                     </div>
                 </div>
-            </section>
+            </ScrollSection>
 
             {/* How I Work Section */}
-            <section className="how-i-work-section">
+            <ScrollSection className="how-i-work-section">
                 <div className="container">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -250,10 +536,10 @@ export default function Home() {
                         </Card>
                     </div>
                 </div>
-            </section>
+            </ScrollSection>
 
             {/* Featured Projects Carousel */}
-            <section className="featured-projects-section">
+            <ScrollSection className="featured-projects-section">
                 <div className="container">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -297,10 +583,10 @@ export default function Home() {
                         </motion.div>
                     </div>
                 </div>
-            </section>
+            </ScrollSection>
 
             {/* Recent Experience */}
-            <section className="recent-experience-section">
+            <ScrollSection className="recent-experience-section">
                 <div className="container">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -335,10 +621,10 @@ export default function Home() {
                         </div>
                     </Card>
                 </div>
-            </section>
+            </ScrollSection>
 
             {/* Recommendations Section */}
-            <section className="recommendations-section">
+            <ScrollSection className="recommendations-section">
                 <div className="container">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -420,39 +706,80 @@ export default function Home() {
                         </Card>
                     </div>
                 </div>
-            </section>
+            </ScrollSection>
 
-            {/* CTA Section */}
-            <section className="cta-section">
+            {/* Navigation CTA Section */}
+            <ScrollSection className="cta-section">
                 <div className="container">
-                    <Card delay={0.1} hover={false}>
-                        <div className="cta-content">
-                            <h2>Let's Work Together</h2>
-                            <p>Looking for full-time SWE roles starting May 2026. Let's connect and build something amazing!</p>
-                            <div className="cta-buttons">
-                                <motion.a
-                                    href="/contact"
-                                    className="btn-primary"
-                                    whileHover={{ scale: 1.05, y: -2 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    Get In Touch
-                                </motion.a>
-                                <motion.a
-                                    href="https://www.linkedin.com/in/siddharthachivukula/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn-secondary"
-                                    whileHover={{ scale: 1.05, y: -2 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    LinkedIn
-                                </motion.a>
-                            </div>
-                        </div>
-                    </Card>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="section-title"
+                        style={{ marginBottom: '3rem' }}
+                    >
+                        Explore More
+                    </motion.h2>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+                        <Link to="/experience" onClick={() => window.scrollTo(0, 0)}>
+                            <Card delay={0.1}>
+                                <div style={{ textAlign: 'center' }}>
+                                    <h3 style={{ fontSize: '24px', marginBottom: '0.5rem' }}>Work Experience</h3>
+                                    <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+                                        Professional journey, opensource contributions, and achievements
+                                    </p>
+                                    <div style={{ color: 'var(--accent-ocean)', fontSize: '14px', fontWeight: '600' }}>
+                                        View Details
+                                    </div>
+                                </div>
+                            </Card>
+                        </Link>
+
+                        <Link to="/projects" onClick={() => window.scrollTo(0, 0)}>
+                            <Card delay={0.2}>
+                                <div style={{ textAlign: 'center' }}>
+                                    <h3 style={{ fontSize: '24px', marginBottom: '0.5rem' }}>Projects</h3>
+                                    <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+                                        Full portfolio of mobile, web, AI/ML, and data projects
+                                    </p>
+                                    <div style={{ color: 'var(--accent-ocean)', fontSize: '14px', fontWeight: '600' }}>
+                                        View Projects
+                                    </div>
+                                </div>
+                            </Card>
+                        </Link>
+
+                        <Link to="/resume" onClick={() => window.scrollTo(0, 0)}>
+                            <Card delay={0.3}>
+                                <div style={{ textAlign: 'center' }}>
+                                    <h3 style={{ fontSize: '24px', marginBottom: '0.5rem' }}>Resume</h3>
+                                    <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+                                        Download or view my complete resume
+                                    </p>
+                                    <div style={{ color: 'var(--accent-ocean)', fontSize: '14px', fontWeight: '600' }}>
+                                        View Resume
+                                    </div>
+                                </div>
+                            </Card>
+                        </Link>
+
+                        <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+                            <Card delay={0.4}>
+                                <div style={{ textAlign: 'center' }}>
+                                    <h3 style={{ fontSize: '24px', marginBottom: '0.5rem' }}>Get In Touch</h3>
+                                    <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+                                        Let's connect and discuss opportunities
+                                    </p>
+                                    <div style={{ color: 'var(--accent-ocean)', fontSize: '14px', fontWeight: '600' }}>
+                                        Contact Me
+                                    </div>
+                                </div>
+                            </Card>
+                        </Link>
+                    </div>
                 </div>
-            </section>
+            </ScrollSection>
 
             {/* Footer */}
             <footer className="footer">
